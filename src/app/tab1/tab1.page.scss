@@ -31,8 +31,8 @@
     font-size: 1em;    
     border: 1px solid #f1f1f1 !important;
     --background: rgba(219,219,219, 0.9);
-    // max-width: 75vw; // this is applying perfectly
-    // max-height: 5vh;
+    --padding-start: 2%;
+    --padding-end: 2%;
   }
   
   #boton-buscar{
