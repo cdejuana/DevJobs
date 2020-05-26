@@ -1,0 +1,42 @@
+*{
+    font-family: "Bree Serif" ;
+  }
+  
+  .texto-principal h3{
+    font-size: 2em;
+  }
+  
+  ion-content.background{
+    --background: url("../../assets/img/foto.jpg") no-repeat center/cover fixed;
+  }
+  
+  .texto-principal{
+    color: white;
+  }
+  form{
+    margin: auto;
+  }
+  
+  ion-input{
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    font-size: 1.5em;
+    opacity: 0.9;
+    border: 1px solid #f1f1f1 !important;
+    --background: rgb(219,219,219);
+    max-width: 75vw; // this is applying perfectly
+    max-height: 5vh;
+  }
+  
+  #boton-buscar{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  }
+  
+  #boton-login{
+   background-color:#839F05;
+   height: 3em;
+  }
