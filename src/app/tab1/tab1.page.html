@@ -6,11 +6,13 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-content [fullscreen]="true" class="fondo-buscador">
+
   <div>
     <ion-grid>
       <ion-row>
         <ion-icon>
-          <ion-img class="logo-inicio" src="../assets/img/logo-navbar-white.png" alt="logo gastroempleo.com"></ion-img>
+          <ion-img [src]="logo.png"></ion-img>
         </ion-icon>
       </ion-row>
       <ion-row>
