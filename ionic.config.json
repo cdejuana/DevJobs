@@ -1,0 +1,7 @@
+{
+  "name": "gastroempleo-candidatos",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
