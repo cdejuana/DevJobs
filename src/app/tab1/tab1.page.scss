@@ -9,7 +9,7 @@
   }
   
   .fondo-buscador{
-    --background: url("../../assets/img/fondo-buscador.jpg") no-repeat center/cover fixed;
+    --background: url("../../assets/img/fondo-buscador-2.jpg") top center / cover no-repeat fixed;
   }
   
   .texto-principal{
@@ -19,12 +19,8 @@
     margin-left: 15%;
   }
   .formulario-principal {
-      position: relative;
-      top: 10%;
-  }
-
-  form{
-    margin: auto;
+    //   position: relative;
+    //   top: 60%;
   }
   
   ion-input{
@@ -36,10 +32,11 @@
     border: 1px solid #f1f1f1 !important;
     --background: rgba(219,219,219, 0.9);
     // max-width: 75vw; // this is applying perfectly
-    max-height: 5vh;
+    // max-height: 5vh;
   }
   
   #boton-buscar{
+      width: 100%;
 //   margin-left: auto;
 //   margin-right: auto;
 //   text-align: center;
