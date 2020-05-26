@@ -1,4 +1,7 @@
 
+    .logo-inicio {
+        width: 300px;
+    }
   .texto-principal h3{
     font-size: 2em;
   }
@@ -19,18 +22,18 @@
     margin-top: 1em;
     margin-bottom: 1em;
     border-radius: 5px;
-    font-size: 1.5em;
+    font-size: 1em;
     opacity: 0.9;
     border: 1px solid #f1f1f1 !important;
     --background: rgb(219,219,219);
-    max-width: 75vw; // this is applying perfectly
+    // max-width: 75vw; // this is applying perfectly
     max-height: 5vh;
   }
   
   #boton-buscar{
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+//   margin-left: auto;
+//   margin-right: auto;
+//   text-align: center;
   }
   
   #boton-login{
