@@ -1,9 +1,28 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content [fullscreen]="true" class="fondo-buscador">
 
-<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-img class="logo-inicio" src="../assets/img/logo-navbar-candidatos-white.png" alt="logo gastroempleo.com"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <div class="ion-text-center ion-text-uppercase ion-margin texto-principal">
+          <h3 class="bree">Encuentra trabajo en las mejores empresas</h3>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <form>
+          <ion-input type="text" placeholder="Empleo o empresa"></ion-input>
+          <ion-input type="text" placeholder="Madrid"><ion-icon name="location-outline" class="input-icon"></ion-icon></ion-input>
+          <ion-button type="submit" id="boton-buscar" class="bree ion-text-uppercase boton-ancho">Buscar</ion-button>
+        </form>
 
+        <ion-button type="button" class="bree boton-login ion-text-uppercase" vertical="bottom" expand="block" id="boton-login" color="#">Iniciar sesión</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

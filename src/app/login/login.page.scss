@@ -1,0 +1,32 @@
+
+    .logo-inicio {
+        width: 90%;
+        margin-left: 6%;
+    }
+
+  .texto-principal h3{
+    font-size: 2em;
+  }
+  
+  .fondo-buscador{
+    --background: url("../../assets/img/fondo-login.jpg") top center / cover no-repeat fixed;
+  }
+  
+  .texto-principal{
+      position: relative;
+    color: white;
+    width: 70%;
+    margin-left: 15%;
+  }
+  
+  ion-input{
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    font-size: 1.1em;    
+    border: 1px solid #f1f1f1 !important;
+    --background: rgba(219,219,219, 0.9);
+    --padding-start: 2%;
+    --padding-end: 2%;
+  }
