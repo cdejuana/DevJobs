@@ -19,6 +19,10 @@ const routes: Routes = [
         loadChildren: () => import("./tab1/buscador-resultados/buscador-resultados.module").then( m => m.BuscadorResultadosPageModule)
       }
     ]
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   }
 ];
 @NgModule({
