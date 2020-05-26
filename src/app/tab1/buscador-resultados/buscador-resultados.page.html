@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>ofertas</ion-title>
+    <div slot="end">144 Ofertas</div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let oferta of ofertas" >
+
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" class="titulo">
+            {{oferta.titulo}}
+          </ion-col>
+        </ion-row>
+        <!--Segunda fila-->
+        <ion-row>
+          <ion-col size="3" class="sector">
+            {{oferta.id_sector}}
+          </ion-col>
+          <ion-col size="3"></ion-col>
+          <ion-col size="6">
+            {{oferta.id_empresa}}
+          </ion-col>
+        </ion-row>
+        <!--Tercera fila-->
+        <ion-row>
+          <ion-col size="6">
+            <ion-icon name="location-outline"></ion-icon>
+            {{oferta.id_localidad}}
+          </ion-col>
+          <ion-col size="6">
+            <ion-icon name="time-outline"></ion-icon>
+            Desde {{oferta.fecha_alta}}
+          </ion-col>
+        </ion-row>
+        <!--Cuarta fila-->
+        <ion-row>
+          <ion-col size="6">
+            <ion-icon name="logo-euro"></ion-icon>
+            {{oferta.salario}}
+          </ion-col>
+          <ion-col size="6">
+            <ion-icon name="calendar-outline"></ion-icon>
+            Jornada {{oferta.id_jornada}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+
+  <ion-tabs>
+    <ion-tab-bar slot="Buscador">
+      <ion-tab-button tab="schedule">
+        <ion-label>
+          <ion-icon name="search-outline"></ion-icon>
+          Buscador
+        </ion-label>
+      </ion-tab-button>
+      
+</ion-content>

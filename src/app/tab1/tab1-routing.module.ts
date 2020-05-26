@@ -6,7 +6,11 @@ const routes: Routes = [
   {
     path: '',
     component: Tab1Page,
+  },  {
+    path: 'buscador-resultados',
+    loadChildren: () => import('./buscador-resultados/buscador-resultados.module').then( m => m.BuscadorResultadosPageModule)
   }
+
 ];
 
 @NgModule({
