@@ -1,17 +1,68 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+  <ion-toolbar >
+    <div class="toolbarlogo">
+      <ion-img class="logo-inicio" src="../assets/img/logo-navbar.png" alt="logo gastroempleo.com"></ion-img>
+    </div>
+    <ion-grid>
+      <ion-row>
+        <ion-title class="ion-text-center">
+          <h3>Mis ofertas</h3>
+        </ion-title>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6"><ion-button >Activas</ion-button></ion-col>
+        <ion-col size="6" color="dark"><ion-button >Finalizadas</ion-button></ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-list>
+    <ion-item *ngFor="let oferta of ofertas" >
+
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" class="titulo">
+            {{oferta.titulo}}
+          </ion-col>
+        </ion-row>
+        <!--Segunda fila-->
+        <ion-row>
+          <ion-col size="3" class="sector">
+            {{oferta.id_sector}}
+          </ion-col>
+          <ion-col size="3"></ion-col>
+          <ion-col size="6">
+            {{oferta.id_empresa}}
+          </ion-col>
+        </ion-row>
+        <!--Tercera fila-->
+        <ion-row>
+          <ion-col size="6">
+            <ion-icon name="location-outline"></ion-icon>
+            {{oferta.id_localidad}}
+          </ion-col>
+          <ion-col size="6">
+            <ion-icon name="time-outline"></ion-icon>
+            Desde {{oferta.fecha_alta}}
+          </ion-col>
+        </ion-row>
+        <!--Cuarta fila-->
+        <ion-row>
+          <ion-col size="6">
+            <ion-icon name="logo-euro"></ion-icon>
+            {{oferta.salario}}
+          </ion-col>
+          <ion-col size="6">
+            <ion-icon name="calendar-outline"></ion-icon>
+            Jornada {{oferta.id_jornada}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
+
 </ion-content>
+
