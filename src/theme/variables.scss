@@ -101,7 +101,11 @@
   height: 2em;
   position: fixed;
   bottom: 2%;
-  width: 60%;
-  margin-left: 17.5%;
+  min-width: 60%;
+  margin-left: 16%;
   border-radius: 5px;
-} 
+}
+
+.ios ion-button {
+  --border-radius: 5px;
+}
