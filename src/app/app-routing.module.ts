@@ -23,10 +23,15 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
-  },  {
+  },
+  {
     path: 'textos-legales',
     loadChildren: () => import('./textos-legales/textos-legales.module').then( m => m.TextosLegalesPageModule)
+  },  {
+    path: 'registro',
+    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
   }
+
 
 ];
 @NgModule({
