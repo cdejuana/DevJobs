@@ -39,7 +39,7 @@
     --border-radius: 5px;
   }
   
-  ion-input {
+  ion-input, ion-textarea {
     width: 90% !important;
     margin-left: 5%;
     margin-top: 1em;
@@ -48,9 +48,9 @@
     font-size: 1.1em;    
     border: 1px solid #f1f1f1 !important;
     background-color: white !important;
-    --padding-start: 2%;
-    --padding-end: 2%;
+    padding: 2%;
   }
+
 
   .enlace-resaltado-gris {
       width: 80%;
@@ -58,4 +58,9 @@
       color: #4D4D4D;
       font-size: 1.5em;
       text-decoration: underline;
+  }
+
+  .texto-pequenio {
+      font-size: 0.8em;
+      margin-left: 5%;
   }

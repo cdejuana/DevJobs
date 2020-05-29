@@ -11,8 +11,12 @@ ion-img.logoGastroToolbar{
     margin-left: 5%;
 }
 
-ion-input {
+ion-input:not(.contrasenia) {
     margin-bottom: 10%;
+}
+
+ion-textarea {
+    margin: 5% 0 10% 4%;
 }
 
 .foto-perfil {
