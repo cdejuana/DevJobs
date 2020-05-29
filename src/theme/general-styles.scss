@@ -3,8 +3,9 @@
     font-family: 'Bree Serif';
   }
   
-  .lato {
+  .lato-light {
     font-family: 'Lato';
+    font-weight: 300;
   }
   
   .fondo-gris {
@@ -22,16 +23,24 @@
     width: 90% !important;
     margin-left: 5%;
   }
+
+  ion-button.boton-gris-oscuro {
+    background-color:#4D4D4D !important;
+    width: 100%;
+    font-size: 1.5em;
+    height: 2em;
+    width: 90% !important;
+    margin-left: 5%;
+  }
   
   .boton-login {
     background-color:#839F05;
     font-size: 1.5em;
-    width: 90% !important;
     height: 2em;
     position: fixed;
     bottom: 2%;
     min-width: 60%;
-    margin-left: 19%;
+    margin-left: 18%;
     border-radius: 5px;
   }
   
@@ -41,6 +50,7 @@
   
   ion-input {
     width: 90% !important;
+    margin-left: 5%;
     margin-top: 1em;
     margin-bottom: 1em;
     border-radius: 5px;
@@ -51,4 +61,10 @@
     --padding-end: 2%;
   }
 
-  
+  .enlace-resaltado-gris {
+      width: 80%;
+      margin: 0 0 0 25%;
+      color: #4D4D4D;
+      font-size: 1.5em;
+      text-decoration: underline;
+  }
