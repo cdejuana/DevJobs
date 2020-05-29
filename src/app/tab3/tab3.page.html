@@ -16,24 +16,33 @@
         <form>
           <ion-label class="label-datos">Nombre</ion-label>
           <ion-input type="text" placeholder="Nombre" class="ion-margin"></ion-input>
+
           <ion-label class="label-datos">Apellidos</ion-label>
           <ion-input type="text" placeholder="Email" class="ion-margin"></ion-input>
+
           <ion-label class="label-datos">Foto de perfil</ion-label>
           <ion-img class="foto-perfil ion-text-center" src="../assets/img/icono-gastro-empleo.jpg"></ion-img>
           <ion-input type="file" class="ion-margin"></ion-input>
+
           <ion-label class="label-datos">Fecha de nacimiento</ion-label>
           <ion-input type="date" class="ion-margin"></ion-input>
+
           <ion-label class="label-datos">Email</ion-label>
           <ion-input type="text" placeholder="Email" class="ion-margin"></ion-input>
+
           <ion-label class="label-datos">Teléfono</ion-label>
           <ion-input type="text" placeholder="Teléfono" class="ion-margin"></ion-input>
+
           <ion-label class="label-datos">Localidad</ion-label>
-          <ion-input type="text" placeholder="Madrid" class="ion-margin"></ion-input>
-          <ion-label class="label-datos">Carta de presentación</ion-label>
-          
+          <ion-input type="text" placeholder="Madrid" class="ion-margin">
+            <ion-icon name="location-outline" class="input-icon"></ion-icon>
+          </ion-input>
+
+          <ion-label class="label-datos">Carta de presentación</ion-label>      
           <ion-button type="button" class="bree ion-text-uppercase boton-ancho ion-margin">Guardar cambios</ion-button>                  
         </form>
-        <ion-button type="button" class="bree boton-gris-oscuro ion-text-uppercase ion-margin" [routerLink]="['/login']">Cerrar sesión</ion-button>
+
+        <ion-button type="button" class="bree ion-text-uppercase boton-ancho ion-margin" [routerLink]="['/login']"  color="dark">Cerrar sesión</ion-button>
         <p class="ion-text-center lato-light">Si desea eliminar su perfil, pulse:</p>  
         <a class="ion-text-center ion-text-uppercase bree enlace-resaltado-gris">Eliminar perfil</a>
       </ion-col>
