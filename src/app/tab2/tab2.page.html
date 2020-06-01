@@ -1,24 +1,21 @@
 <ion-header [translucent]="true">
-  <ion-toolbar >
     <div class="toolbarlogo">
-      <ion-img class="logo-inicio" src="../assets/img/logo-navbar.png" alt="logo gastroempleo.com"></ion-img>
-    </div>
-    <ion-grid>
-      <ion-row>
-        <ion-title class="ion-text-center">
-          <h3 class="bree">Mis ofertas</h3>
-        </ion-title>
-      </ion-row>
-      <ion-row>
-        <ion-col size="6"><ion-button class="bree">Activas</ion-button></ion-col>
-        <ion-col size="6" color="dark"><ion-button class="bree">Finalizadas</ion-button></ion-col>
-      </ion-row>
-    </ion-grid>
-  </ion-toolbar>
+      <ion-img class="logo-inicio" src="../assets/img/logo-navbar-candidatos-black.png" alt="logo gastroempleo.com"></ion-img>
+    </div>    
 </ion-header>
 
 <ion-content>
-
+  <ion-grid>
+    <ion-row>
+      <ion-title class="ion-text-center">
+        <h3 class="bree">Mis ofertas</h3>
+      </ion-title>
+    </ion-row>
+    <ion-row>
+      <ion-col size="6"><ion-button class="bree" size="small" expand="block">Activas</ion-button></ion-col>
+      <ion-col size="6" color="dark"><ion-button class="bree letra-blanca" size="small" expand="block" color="medium">Finalizadas</ion-button></ion-col>
+    </ion-row>
+  </ion-grid>
   <ion-list>
     <ion-item *ngFor="let oferta of ofertas" >
 
