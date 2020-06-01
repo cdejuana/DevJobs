@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { BuscadorResultadosPageModule } from './tab1/buscador-resultados/buscador-resultados.module';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    //loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    loadChildren: () => import('./bienvenida-inicio/bienvenida-inicio.module').then(m => m.BienvenidaInicioPageModule)
   },
   {
     path: "tab1",
@@ -27,6 +27,7 @@ const routes: Routes = [
   {
     path: 'textos-legales',
     loadChildren: () => import('./textos-legales/textos-legales.module').then( m => m.TextosLegalesPageModule)
+<<<<<<< HEAD
   },  {
     path: 'registro',
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
@@ -36,6 +37,18 @@ const routes: Routes = [
     loadChildren: () => import('./oferta-detalles/oferta-detalles.module').then( m => m.OfertaDetallesPageModule)
   }
 
+=======
+  },
+  {
+    path: 'registro',
+    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
+  },
+  {
+    path: 'bienvenida-inicio',
+    loadChildren: () => import('./bienvenida-inicio/bienvenida-inicio.module').then( m => m.BienvenidaInicioPageModule)
+  }
+
+>>>>>>> f90dafa5eb737e2bbfe5ca266a8c68de7a832dec
 
 ];
 @NgModule({

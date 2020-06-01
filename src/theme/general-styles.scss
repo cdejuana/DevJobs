@@ -53,14 +53,23 @@
 
 
   .enlace-resaltado-gris {
-      width: 80%;
-      margin: 0 0 0 25%;
-      color: #4D4D4D;
-      font-size: 1.5em;
-      text-decoration: underline;
+    display: block;
+    color: #4D4D4D;
+    font-size: 1.5em;
+    text-decoration: underline;
   }
 
   .texto-pequenio {
       font-size: 0.8em;
       margin-left: 5%;
+  }
+
+  ion-checkbox {
+    margin-right: 5px;
+  }
+
+  .checkbox-container {   
+    font-weight: 300; 
+    display: flex;
+    align-content: center;
   }
