@@ -35,6 +35,10 @@ const routes: Routes = [
   {
     path: 'bienvenida-inicio',
     loadChildren: () => import('./bienvenida-inicio/bienvenida-inicio.module').then( m => m.BienvenidaInicioPageModule)
+  },
+  {
+    path: 'oferta-detalles',
+    loadChildren: () => import('./oferta-detalles/oferta-detalles.module').then( m => m.OfertaDetallesPageModule)
   }
 
 
