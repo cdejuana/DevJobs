@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { BuscadorResultadosPageModule } from './tab1/buscador-resultados/buscador-resultados.module';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    //loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    loadChildren: () => import('./bienvenida-inicio/bienvenida-inicio.module').then(m => m.BienvenidaInicioPageModule)
   },
   {
     path: "tab1",
@@ -27,7 +27,8 @@ const routes: Routes = [
   {
     path: 'textos-legales',
     loadChildren: () => import('./textos-legales/textos-legales.module').then( m => m.TextosLegalesPageModule)
-  },  {
+  },
+  {
     path: 'registro',
     loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
   },
