@@ -27,17 +27,6 @@ const routes: Routes = [
   {
     path: 'textos-legales',
     loadChildren: () => import('./textos-legales/textos-legales.module').then( m => m.TextosLegalesPageModule)
-<<<<<<< HEAD
-  },  {
-    path: 'registro',
-    loadChildren: () => import('./registro/registro.module').then( m => m.RegistroPageModule)
-  },
-  {
-    path: 'oferta-detalles',
-    loadChildren: () => import('./oferta-detalles/oferta-detalles.module').then( m => m.OfertaDetallesPageModule)
-  }
-
-=======
   },
   {
     path: 'registro',
@@ -46,9 +35,12 @@ const routes: Routes = [
   {
     path: 'bienvenida-inicio',
     loadChildren: () => import('./bienvenida-inicio/bienvenida-inicio.module').then( m => m.BienvenidaInicioPageModule)
+  },
+  {
+    path: 'oferta-detalles',
+    loadChildren: () => import('./oferta-detalles/oferta-detalles.module').then( m => m.OfertaDetallesPageModule)
   }
 
->>>>>>> f90dafa5eb737e2bbfe5ca266a8c68de7a832dec
 
 ];
 @NgModule({
