@@ -1,7 +1,7 @@
 <ion-header [translucent]="true" >
   <ion-toolbar class="fondo-login">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/login"></ion-back-button>
+      <ion-back-button defaultHref="/bienvenida-inicio"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -12,23 +12,29 @@
   <ion-grid class="row-container">
     <ion-row class="row-top">
       <ion-col>
-        <ion-img class="logo-inicio" src="../assets/img/logo-navbar.png" alt="logo gastroempleo.com"></ion-img>
+        <ion-img class="logo-inicio" src="../assets/img/logo-navbar-candidatos-black.png" alt="logo gastroempleo.com"></ion-img>
       </ion-col>
     </ion-row>
     <ion-row class="row-bottom">
       <ion-col>
         <form>
-          <ion-input type="text" placeholder="Nombre" class="ion-margin"></ion-input>
           <ion-input type="text" placeholder="Email" class="ion-margin"></ion-input>
           <ion-input type="text" placeholder="Contraseña" class="ion-margin"></ion-input>
-          <div class="ion-margin">
-            <ion-checkbox ></ion-checkbox><ion-text> Recordar email y contraseña</ion-text><br>
+          <div class="ion-margin checkbox-container">
+            <ion-checkbox></ion-checkbox><ion-text> Recordar email y contraseña</ion-text><br>
           </div> 
-          <div class="ion-margin"> 
-            <ion-checkbox ></ion-checkbox><ion-text class="ion-text-left"> Acepto los <a href="/textos-legales"> términos y condiciones </a> de gastroempleo</ion-text>
-          </div>
-            <ion-button type="submit" id="boton-buscar" class="bree ion-text-uppercase boton-ancho" [routerLink]="['']">Registrarme</ion-button>
+          <ion-button type="submit" id="boton-buscar" class="bree ion-text-uppercase boton-ancho" [routerLink]="['/tabs/tab1']">Iniciar sesión</ion-button>
         </form>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <a class="ion-margin ion-text-center enlace-recuperacion-contrasenia" [routerLink]="['/recuperar-contrasenia']">Tengo problemas para entrar</a>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <a class="ion-text-center ion-text-uppercase bree enlace-resaltado-gris" [routerLink]="['/registro']">Registrarme</a>
       </ion-col>
     </ion-row>
   </ion-grid>
