@@ -1,0 +1,56 @@
+ion-img{
+    margin: auto;
+    width: 60%;
+}
+.titulo-oferta{
+    font-weight: bold;
+    margin: 1.2em;
+    padding: 1em;
+    border-bottom: 1px solid gray;
+}
+
+.etiqueta-sector{
+    background-color:#839F05;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+    margin-left: 1em;
+    margin-right: 1em;
+
+}
+
+ion-title{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+ion-grid{
+    width: 90%;
+    margin: auto;
+}
+
+.resumen{
+    border-top: 1px solid gray;
+    padding: 1.5em;
+
+}
+
+ion-toolbar{
+    --background: #E6E6E6;
+}
+.footer{
+    --background: #CCCCCC;
+    height: 5em;
+}
+
+ion-button{
+    text-align: center;
+    width: 70%;
+    height: 2.5em;
+    margin: auto;
+    color: white;
+    background-color: #EB8B00;
+    border-radius: 10px;
+    font-size: 1.2em;
+    margin-top: 1em;
+}
