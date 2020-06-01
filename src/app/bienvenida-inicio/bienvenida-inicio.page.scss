@@ -1,0 +1,20 @@
+
+    .logo-inicio {
+        width: 90%;
+        margin-left: 6%;
+    }
+
+  .texto-principal h3{
+    font-size: 2em;
+  }
+  
+  .fondo-login{
+    --background: url("../../assets/img/fondo-login.jpg") top left / cover no-repeat fixed;
+  }
+  
+  .texto-principal{
+      position: relative;
+    color: white;
+    width: 70%;
+    margin-left: 15%;
+  }
