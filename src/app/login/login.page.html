@@ -1,27 +1,36 @@
-<ion-content [fullscreen]="true" class="fondo-login">
+<ion-header [translucent]="true" >
+  <ion-toolbar class="fondo-login">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/login"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-row>
+    </ion-row>
 
+<ion-content [fullscreen]="true" class="fondo-login">
   <ion-grid class="row-container">
     <ion-row class="row-top">
       <ion-col>
-        <ion-img class="logo-inicio" src="../assets/img/logo-navbar-candidatos-white.png" alt="logo gastroempleo.com"></ion-img>
-      </ion-col>
-    </ion-row>
-    <ion-row class="row-middle">
-      <ion-col>
-        <div class="ion-text-center ion-text-uppercase ion-margin texto-principal">
-          <h3 class="bree">Encuentra trabajo en las mejores empresas</h3>
-        </div>
+        <ion-img class="logo-inicio" src="../assets/img/logo-navbar.png" alt="logo gastroempleo.com"></ion-img>
       </ion-col>
     </ion-row>
     <ion-row class="row-bottom">
       <ion-col>
         <form>
-          <ion-input type="text" placeholder="Empleo o empresa"></ion-input>
-          <ion-input type="text" placeholder="Madrid"><ion-icon name="location-outline" class="input-icon"></ion-icon></ion-input>
-          <ion-button type="submit" id="boton-buscar" class="bree ion-text-uppercase boton-ancho" [routerLink]="['/tabs/tab1/']">Buscar</ion-button>
+          <ion-input type="text" placeholder="Nombre" class="ion-margin"></ion-input>
+          <ion-input type="text" placeholder="Email" class="ion-margin"></ion-input>
+          <ion-input type="text" placeholder="Contraseña" class="ion-margin"></ion-input>
+          <div class="ion-margin">
+            <ion-checkbox ></ion-checkbox><ion-text> Recordar email y contraseña</ion-text><br>
+          </div> 
+          <div class="ion-margin"> 
+            <ion-checkbox ></ion-checkbox><ion-text class="ion-text-left"> Acepto los <a href="/textos-legales"> términos y condiciones </a> de gastroempleo</ion-text>
+          </div>
+            <ion-button type="submit" id="boton-buscar" class="bree ion-text-uppercase boton-ancho" [routerLink]="['']">Registrarme</ion-button>
         </form>
-        <ion-button type="button" class="bree boton-login ion-text-uppercase" color="secondary" [routerLink]="['/tabs/tab1/']">Iniciar sesión</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
+
 </ion-content>
