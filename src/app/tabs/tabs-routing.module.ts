@@ -28,7 +28,12 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/bienvenida-registro',
+    redirectTo: '/bienvenida-inicio',
+    pathMatch: 'full'
+  },
+  {
+    path: '/tabs',
+    redirectTo: '/tabs/tab1',
     pathMatch: 'full'
   }
 ];

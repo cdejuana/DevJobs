@@ -39,7 +39,8 @@ const routes: Routes = [
   {
     path: 'oferta-detalles',
     loadChildren: () => import('./oferta-detalles/oferta-detalles.module').then( m => m.OfertaDetallesPageModule)
-  },  {
+  },
+  {
     path: 'recuperacion-contrasena',
     loadChildren: () => import('./recuperacion-contrasena/recuperacion-contrasena.module').then( m => m.RecuperacionContrasenaPageModule)
   }
