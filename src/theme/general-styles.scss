@@ -10,6 +10,19 @@
 
 .fondo-gris {
   --background: #E6E6E6;
+  background-color: #E6E6E6;
+}
+
+.fondo-blanco {
+  --background: white;
+  background-color: white;
+}
+
+/** toolbar superior **/
+
+ion-img.logoGastroToolbar{
+  width: 60%;
+  margin: auto;
 }
 
 /** FORMULARIOS **/
@@ -28,7 +41,6 @@ ion-input, ion-textarea {
   background-color: white !important;
   padding: 2%;
 }
-
 
 .enlace-resaltado-gris {
   display: block;
