@@ -13,15 +13,19 @@ ion-img{
     margin-bottom: 2.5em;
 }
 
-ion-title{
-    font-family: 'Lato';
+h2{
+    margin-left: 1.2em;
     font-weight: bold;
+}    
+
+h3{
+    width: 80%;
+    margin: auto;
 }
 
-ion-text{
-    width: 75%;
+p{
+    width: 80%;
     margin: auto;
-   // padding: 1em;
-    font-size: 1.4em;
+    font-size: 1em;
     line-height : 1.5em;
 }
