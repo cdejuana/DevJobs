@@ -14,6 +14,7 @@ ion-textarea {
     width: 50%;
     margin: 15px auto ;
 }
+
 p.texto-pequenio {
     margin-top: 0px;
     color: --ion-color-dark;
@@ -21,4 +22,37 @@ p.texto-pequenio {
 
 #enlace-eliminar-perfil{
     margin-bottom: 50px;
+}
+
+ion-input, ion-textarea {
+    background-color: white !important;
+    border: 0px;
+}
+
+input {
+    display: none;
+}
+
+.subir-archivo {
+    display: block;
+    width: 90%;
+    height: 40px;
+    margin-left: 4%;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+    border-radius: 5px;
+    font-size: 1.1em;
+    background-color: white !important;
+    padding: 2%;    
+}
+
+#boton-subir {
+    position: relative;
+    height: 40px;
+    width: 90%;
+    background-color: green;
+}
+
+#icono-foto {
+    vertical-align: middle;
 }
