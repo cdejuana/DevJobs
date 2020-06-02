@@ -12,30 +12,9 @@
   --background: #E6E6E6;
 }
 
+/** FORMULARIOS **/
 .input-icon {
   margin-left: 2%;
-}
-
-.boton-ancho {
-  width: 100%;
-  font-size: 1.5em;
-  height: 2em;
-  width: 90% !important;
-  margin-left: 5%;
-}
-
-.boton-login {
-  background-color:#839F05;
-  font-size: 1.5em;
-  height: 2em;
-  position: fixed;
-  bottom: 2%;
-  min-width: 60%;
-  border-radius: 5px;
-}
-
-.ios ion-button {
-  --border-radius: 5px;
 }
 
 ion-input, ion-textarea {
@@ -77,6 +56,33 @@ ion-checkbox {
   display: flex;
   justify-content: center;
 }
+
+/** BOTONES **/
+
+.boton-ancho {
+  width: 100%;
+  font-size: 1.5em;
+  height: 2em;
+  width: 90% !important;
+  margin-left: 5%;
+}
+
+.boton-login {
+  background-color:#839F05;
+  font-size: 1.5em;
+  height: 2em;
+  position: fixed;
+  bottom: 2%;
+  min-width: 60%;
+  border-radius: 5px;
+}
+
+.ios ion-button {
+  --border-radius: 5px;
+}
+
+
+/** ESTILOS MIS OFERTAS **/
 
 .datos-resumen-oferta {
   font-weight: 300;
