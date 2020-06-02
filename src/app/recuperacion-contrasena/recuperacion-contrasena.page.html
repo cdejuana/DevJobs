@@ -1,0 +1,36 @@
+<ion-header [translucent]="true" >
+  <ion-toolbar class="fondo-contrasena">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/bienvenida-inicio"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-row>
+    </ion-row>
+
+<ion-content [fullscreen]="true" class="fondo-contrasena">
+  <ion-grid class="row-container">
+    <ion-row class="row-top">
+      <ion-col>
+        <ion-img class="logo-inicio" src="../assets/img/logo-navbar-candidatos-black.png" alt="logo gastroempleo.com"></ion-img>
+      </ion-col>
+    </ion-row>
+    <ion-row class="ion-margin">
+      <h3>Recuperación de contraseña</h3>
+    </ion-row>
+    <ion-row>
+      <h5>Si eres un candidato y no recuerdas tu contraseña, 
+        introduce aquí el email con el que te has registrado 
+        y te enviaremos un correo con las indicaciones para recuperarla.</h5>
+    </ion-row>
+    <ion-row class="row-bottom">
+      <ion-col>
+        <form>
+          <ion-input type="text" placeholder="Email" class="ion-margin"></ion-input>
+          <ion-button type="submit" class="bree ion-text-uppercase" [routerLink]="['/tabs/tab1']">Recuperar Contraseña</ion-button>
+        </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

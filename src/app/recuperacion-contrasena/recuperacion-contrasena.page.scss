@@ -1,0 +1,41 @@
+  ion-img{
+    width: 80%;
+    margin: auto;
+  }
+  
+  .fondo-contrasena{
+   --background: #E6E6E6;
+  }
+  
+  
+  ion-input{
+   width: 90%;
+   margin: auto;
+   margin-top: 1em;
+   margin-bottom: 1em;
+   border-radius: 8px;
+   font-size: 1.1em;    
+   border: 1px solid #f1f1f1 !important;
+   --background: white;
+   --padding-start: 2%;
+   --padding-end: 2%;
+  }
+  
+  ion-button{
+    width: 100%;
+    font-size: 1em;
+    height: 2em;
+    width: 90% !important;
+    margin-left: 5%;
+  }
+
+  h5{
+      margin: auto;
+      width: 80%;
+      line-height: 1.5em;
+  }
+
+  h3{
+      margin: auto;
+     font-weight: bold;
+  }
