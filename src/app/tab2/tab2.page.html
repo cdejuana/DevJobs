@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
-    <div class="toolbarlogo">
-      <ion-img class="logo-inicio" src="../assets/img/logo-navbar-candidatos-black.png" alt="logo gastroempleo.com"></ion-img>
+    <div class="fondo-gris">
+      <ion-img class="logoGastroToolbar" src="../assets/img/logo-navbar-candidatos-black.png" alt="logo gastroempleo.com"></ion-img>
     </div>    
 </ion-header>
 
@@ -11,26 +11,27 @@
         <h3 class="bree">Mis ofertas</h3>
       </ion-title>
     </ion-row>
+
     <ion-row>
       <ion-col size="6"><ion-button class="bree" size="small" expand="block">Activas</ion-button></ion-col>
       <ion-col size="6" color="dark"><ion-button class="bree letra-blanca" size="small" expand="block" color="medium">Finalizadas</ion-button></ion-col>
     </ion-row>
   </ion-grid>
+
   <ion-list>
     <ion-item *ngFor="let oferta of ofertas" >
-
+    <a [routerLink]="['/oferta-detalles']">
       <ion-grid>
         <ion-row>
           <ion-col size="12" class="titulo-oferta">
             {{oferta.titulo}}
           </ion-col>
         </ion-row>
-        <!--Segunda fila-->
-        
+
+        <!-- DATOS oferta -->
         <ion-row>
           <ion-col>
             <ion-badge class="datos-resumen-oferta sector-oferta" color="secondary">{{oferta.id_sector}}</ion-badge>
-
             <ion-badge *ngIf="oferta.leido" class="datos-resumen-oferta sector-oferta" color="primary">Leído</ion-badge>
             <ion-badge *ngIf="!oferta.leido" class="datos-resumen-oferta sector-oferta" color="dark">No leído</ion-badge>
 
@@ -54,8 +55,8 @@
             </div>
           </ion-col>
         </ion-row>  
-
       </ion-grid>
+    </a>
     </ion-item>
   </ion-list>
 
