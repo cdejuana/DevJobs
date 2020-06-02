@@ -15,6 +15,7 @@ export class Tab2Page {
       id_sector:"Cocina",
       id_contrato:"Indefinido",
       id_jornada:"Completa",
+      leido: true,
 
       titulo: "Cocinero para restaurante vegano",
       descripcion: "",
@@ -30,6 +31,7 @@ export class Tab2Page {
       id_sector:"Cocina",
       id_contrato:"Indefinido",
       id_jornada:"Completa",
+      leido: false,
 
       titulo: "Repartidor",
       descripcion: "",
@@ -45,6 +47,7 @@ export class Tab2Page {
       id_sector:"Cocina",
       id_contrato:"Indefinido",
       id_jornada:"Completa",
+      leido: false,
 
       titulo: "Jefe de cocina",
       descripcion: "",
@@ -60,6 +63,7 @@ export class Tab2Page {
       id_sector:"Cocina",
       id_contrato:"Indefinido",
       id_jornada:"Completa",
+      leido: true,
 
       titulo: "Cocinero para restaurante vegano",
       descripcion: "",
@@ -75,6 +79,7 @@ export class Tab2Page {
       id_sector:"Cocina",
       id_contrato:"Indefinido",
       id_jornada:"Completa",
+      leido: true,
 
       titulo: "Repartidor",
       descripcion: "",
@@ -90,6 +95,7 @@ export class Tab2Page {
       id_sector:"Cocina",
       id_contrato:"Indefinido",
       id_jornada:"Completa",
+      leido: true,
 
       titulo: "Jefe de cocina",
       descripcion: "",
