@@ -32,7 +32,7 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: '/tabs',
+    path: '/principal',
     redirectTo: '/tabs/tab1',
     pathMatch: 'full'
   }
