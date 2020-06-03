@@ -109,7 +109,7 @@ ion-checkbox{
   vertical-align: middle;
   position: relative;
   bottom: 0.1em;
-  margin-right: 0.2px;
+  margin-right: 0.3px;
 }
 
 .titulo-oferta{
@@ -118,6 +118,14 @@ ion-checkbox{
   font-size: 1.4em;
   text-transform: uppercase;
   margin: 0 0 0.2em 0;
+}
+
+.titulo-detalle-oferta{
+  font-family: "Bree serif";
+  font-size: 1.5em;
+  text-transform: uppercase;
+  margin: 0.5em 0;
+  padding: 0 0.2em;
 }
 
 ion-badge.sector-oferta{
@@ -138,4 +146,27 @@ ion-badge.sector-oferta{
 
 ion-item:not(:first-child) {
   margin-top: 0.5em;
+}
+
+/** pagina detalle de oferta **/
+
+.numero-ofertas {
+  font-size: 1em;
+  margin: 0 0.5em 0 0;
+}
+
+ion-icon#anterior, ion-icon#siguiente {
+  position: relative;
+  top: 14px;
+  vertical-align: middle;
+  font-size: 2em;
+  color: #999999;
+}
+
+ion-icon#anterior {
+  right: 10px;
+}
+
+ion-icon#siguiente {
+  left: 10px;
 }

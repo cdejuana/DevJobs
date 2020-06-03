@@ -1,27 +1,10 @@
 ion-img{
     margin: auto;
-    width: 60%;
-}
-.titulo-oferta{
-    font-weight: bold;
-    margin: 1.2em;
-    padding: 1em;
-    border-bottom: 1px solid gray;
+    width: 80%;
 }
 
 .etiqueta-sector{
-    background-color:#839F05;
-    border-radius: 5px;
-    text-align: center;
-    color: white;
-    margin-left: 1em;
-    margin-right: 1em;
-
-}
-
-ion-title{
-    font-weight: bold;
-    font-size: 1.2em;
+    padding: 0.2em;
 }
 
 ion-grid{
@@ -29,10 +12,14 @@ ion-grid{
     margin: auto;
 }
 
-.resumen{
-    border-top: 1px solid gray;
-    padding: 1.5em;
+.cabecera {
+    border-top: 1px solid #999;
+    padding-top: 1em;
+}
 
+.resumen{
+    border-top: 1px solid #999;
+    padding-top: 1em;
 }
 
 ion-toolbar{
