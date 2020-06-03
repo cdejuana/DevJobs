@@ -54,14 +54,17 @@ ion-input, ion-textarea {
     margin-left: 5%;
 }
 
-ion-checkbox {
-  margin-right: 10px;
+ion-checkbox{
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 0.8em;
 }
 
-.checkbox-container {   
-  font-weight: 300; 
-  display: flex;
-  align-content: center;
+.checkbox-container {    
+  font-weight: 300;
+  width: 90% !important;
+  margin-left: 5%;
+  vertical-align: middle;
 }
 
 .contenedor-centrar {
