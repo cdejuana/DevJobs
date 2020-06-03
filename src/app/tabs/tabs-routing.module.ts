@@ -30,11 +30,6 @@ const routes: Routes = [
     path: '',
     redirectTo: '/bienvenida-inicio',
     pathMatch: 'full'
-  },
-  {
-    path: '/principal',
-    redirectTo: '/tabs/tab1',
-    pathMatch: 'full'
   }
 ];
 
