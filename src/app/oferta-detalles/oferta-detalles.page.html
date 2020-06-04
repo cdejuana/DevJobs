@@ -1,16 +1,19 @@
 <ion-header>
   <ion-toolbar >
     <ion-buttons slot="start">
-      <!-- <ion-back-button defaultHref="/buscador-resultados"></ion-back-button> -->
       <ion-back-button defaultHref="/tabs/tab2"></ion-back-button>
     </ion-buttons>
     <ion-img class="logoGastroToolbar" src="../assets/img/logo-navbar-candidatos-black.png" alt="logo gastroempleo.com"></ion-img>
-    <!-- <div class="numero-ofertas bree" slot="end">144 Ofertas</div> -->
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-grid>
+    <ion-row>
+      <ion-title class="ion-text-center">
+        <h4 class="bree">Mis ofertas: 1 de 144</h4>
+      </ion-title>        
+    </ion-row>
     <ion-row>
       <ion-icon id="anterior"  name="chevron-back-circle-outline"></ion-icon>
       <ion-title class="titulo-detalle-oferta">Jefe de cocina</ion-title>
@@ -19,7 +22,7 @@
     <ion-row class="cabecera">
       <ion-col>      
         <ion-badge class="sector-oferta datos-resumen-oferta" color="secondary">Cocina</ion-badge>
-        <ion-badge class="datos-resumen-oferta sector-oferta" color="primary">Leído</ion-badge>
+        <ion-badge class="datos-resumen-oferta sector-oferta" color="primary">En proceso</ion-badge>
         <!-- <ion-badge *ngIf="!oferta.leido" class="datos-resumen-oferta sector-oferta" color="dark">No leído</ion-badge> -->
         <div class="datos-resumen-oferta id-empresa">Restaurante Verde Oliva</div>
         <div class="datos-resumen-oferta"><ion-icon name="location"></ion-icon>Madrid</div>
@@ -66,10 +69,3 @@
   </ion-grid>
 
 </ion-content>
-<ion-footer>
-  <ion-toolbar class="footer">
-    <ion-buttons>
-      <ion-button class="bree">Inscribirme</ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-footer>

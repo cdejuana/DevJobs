@@ -32,7 +32,7 @@
         <ion-row>
           <ion-col>
             <ion-badge class="datos-resumen-oferta sector-oferta" color="secondary">{{oferta.id_sector}}</ion-badge>
-            <ion-badge *ngIf="oferta.leido" class="datos-resumen-oferta sector-oferta" color="primary">Leído</ion-badge>
+            <ion-badge *ngIf="oferta.leido" class="datos-resumen-oferta sector-oferta" color="primary">En proceso</ion-badge>
             <ion-badge *ngIf="!oferta.leido" class="datos-resumen-oferta sector-oferta" color="dark">No leído</ion-badge>
 
             <div class="datos-resumen-oferta">Fecha límite: {{oferta.fecha_limite_inscripcion}}</div>

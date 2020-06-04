@@ -1,0 +1,54 @@
+ion-img{
+    margin: auto;
+    width: 80%;
+}
+
+.etiqueta-sector{
+    padding: 0.2em;
+}
+
+ion-grid{
+    width: 90%;
+    margin: auto;
+}
+
+.cabecera {
+    border-top: 1px solid #999;
+    padding-top: 1em;
+}
+
+.resumen{
+    border-top: 1px solid #999;
+    padding-top: 1em;
+}
+
+ion-toolbar{
+    --background: #E6E6E6;
+}
+.footer{
+    --background: #CCCCCC;
+    height: 5em;
+}
+
+ion-button{
+    text-align: center;
+    width: 70%;
+    height: 2.5em;
+    margin: auto;
+    color: white;
+    background-color: #EB8B00;
+    border-radius: 10px;
+    font-size: 1.2em;
+    margin-top: 1em;
+}
+
+ion-text{
+    margin: auto;
+    width: 90%;
+    line-height: 1.5em;
+    font-size: 1.2em;
+}
+
+ion-grid {
+    margin-top: 10px;
+}
