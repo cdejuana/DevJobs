@@ -121,6 +121,7 @@ ion-checkbox{
 }
 
 .titulo-detalle-oferta{
+  width: 90%;
   font-family: "Bree serif";
   font-size: 1.5em;
   text-transform: uppercase;
@@ -169,4 +170,23 @@ ion-icon#anterior {
 
 ion-icon#siguiente {
   left: 10px;
+}
+
+.contenedor-resumen-oferta {
+  font-weight: 300;
+  font-size: 1.2em;
+}
+
+.contenedor-resumen-oferta ul {
+  padding: 0;
+  list-style: none;
+}
+
+.item-dato-oferta {
+  font-weight: 400;
+}
+
+.contenedor-descripcion-oferta {
+  font-weight: 300;
+  font-size: 1.5em;
 }
