@@ -5,7 +5,7 @@
       <ion-back-button defaultHref="/tabs/tab2"></ion-back-button>
     </ion-buttons>
     <ion-img class="logoGastroToolbar" src="../assets/img/logo-navbar-candidatos-black.png" alt="logo gastroempleo.com"></ion-img>
-    <div class="numero-ofertas bree" slot="end">144 Ofertas</div>
+    <!-- <div class="numero-ofertas bree" slot="end">144 Ofertas</div> -->
   </ion-toolbar>
 </ion-header>
 
@@ -19,101 +19,49 @@
     <ion-row class="cabecera">
       <ion-col>      
         <ion-badge class="sector-oferta datos-resumen-oferta" color="secondary">Cocina</ion-badge>
-        <div class="datos-resumen-oferta">Restaurante Verde Oliva</div>
+        <ion-badge class="datos-resumen-oferta sector-oferta" color="primary">Leído</ion-badge>
+        <!-- <ion-badge *ngIf="!oferta.leido" class="datos-resumen-oferta sector-oferta" color="dark">No leído</ion-badge> -->
+        <div class="datos-resumen-oferta id-empresa">Restaurante Verde Oliva</div>
         <div class="datos-resumen-oferta"><ion-icon name="location"></ion-icon>Madrid</div>
         <div class="datos-resumen-oferta"><ion-icon name="time"></ion-icon>Hace 23 horas</div>
       </ion-col>
     </ion-row>
     <ion-row class="resumen">
-      <ion-title>Resumen</ion-title>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-title>Referencia:</ion-title>
-      </ion-col>
-      <ion-col>
-       #58276
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-title>Sector:</ion-title>
-      </ion-col>
-      <ion-col>
-       Cocina
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-title>Tipo de contrato:</ion-title>
-      </ion-col>
-      <ion-col>
-       Indefinido
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-title>Tipo de jornada:</ion-title>
-      </ion-col>
-      <ion-col>
-       Competa
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-title>Salario:</ion-title>
-      </ion-col>
-      <ion-col>
-       1200-2000
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-title>Fecha alta:</ion-title>
-      </ion-col>
-      <ion-col>
-       12-05-2020
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-title>Fecha limite de inscripción:</ion-title>
-      </ion-col>
-      <ion-col>
-       15-06-2020
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-col>
-        <ion-title>Descripción:</ion-title>
-      </ion-col>
-    </ion-row>
-    <ion-row>
-      <ion-text>
-      Buscamos JEFE DE COCINA para la localidad
-      de Úbeda provincia de Jaén, con al menos 2 años
-      de experiencia en puesto similar. 
-      Imprescindible capacidad de organización, resolución
-      y liderazgo.Buscamos JEFE DE COCINA para la 
-      localidad de Úbeda provincia de Jaén, con al
-      menos 2 años de experiencia en puesto similar.
-      Imprescindible capacidad de organización, 
-      resolución y liderazgo. • Elaboración de la
-      oferta gastronómica • Dirigir, supervisar y
-      planificar el conjunto de actividades de la cocina.
-      • Asegurar el cumplimiento de los objetivos marcados.
-      • Gestión de costes e inventarios 
-      • Tener informada la Dirección de las incidencias y novedades. 
-      • Coordinar el trabajo de todo el equipo de cocina diariamente 
-      • Promover la comunicación interna. 
-      • Coordinar los procesos de control de inventarios, pedidos y fichas técnicas. 
-      • Supervisar las existencias de los productos disponibles en la cocina. 
-      • Realizar controles periódicos del almacenamiento, manipulación y rendimiento de los productos de la de (APPCC). 
-      • Almacenar y manipular correctamente todo el material de la cocina. 
-      • Supervisar el cumplimiento de la normativa interna de la empresa. 
-      • Garantizar el nivel de calidad marcado. • Asegurar, dentro de su gestión, la satisfacción del cliente. 
+      <ion-col>      
+      <h1>Resumen</h1>
+      <div class="contenedor-resumen-oferta">
+        <ul>
+        <li><ion-text class="item-dato-oferta">Referencia: </ion-text>#58276</li>
+        <li><ion-text class="item-dato-oferta">Sector: </ion-text>Cocina</li>
+        <li><ion-text class="item-dato-oferta">Tipo de contrato: </ion-text>Indefinido</li>
+        <li><ion-text class="item-dato-oferta">Tipo de jornada: </ion-text>Completa</li>
+        <li><ion-text class="item-dato-oferta">Salario: </ion-text>1200-2000</li>
+        <li><ion-text class="item-dato-oferta">Fecha alta: </ion-text>12-05-2020</li>
+        <li><ion-text class="item-dato-oferta">Fecha limite de inscripción: </ion-text>15-06-2020</li>
+        </ul>
+      </div>
+
+      <h1>Descripción</h1>
+      <div class="contenedor-descripcion-oferta">
+      <p>Buscamos JEFE DE COCINA para la localidad de Úbeda provincia de Jaén, con al menos 2 años de experiencia en puesto similar. Imprescindible capacidad de organización, resolución y liderazgo.</p>
+
+      • Elaboración de la oferta gastronómica<br>
+      • Dirigir, supervisar y planificar el conjunto de actividades de la cocina.<br>
+      • Asegurar el cumplimiento de los objetivos marcados.<br>
+      • Gestión de costes e inventarios <br>
+      • Tener informada la Dirección de las incidencias y novedades. <br>
+      • Coordinar el trabajo de todo el equipo de cocina diariamente <br>
+      • Promover la comunicación interna. <br>
+      • Coordinar los procesos de control de inventarios, pedidos y fichas técnicas. <br>
+      • Supervisar las existencias de los productos disponibles en la cocina. <br>
+      • Realizar controles periódicos del almacenamiento, manipulación y rendimiento de los productos de la de (APPCC). <br>
+      • Almacenar y manipular correctamente todo el material de la cocina. <br>
+      • Supervisar el cumplimiento de la normativa interna de la empresa.<br>
+      • Garantizar el nivel de calidad marcado.<br>
+      • Asegurar, dentro de su gestión, la satisfacción del cliente. <br>
       • Coordinar y supervisar la limpieza de la cocina y toda su maquinaria.
-    </ion-text>
+    </div>  
+    </ion-col>
     </ion-row>
   </ion-grid>
 

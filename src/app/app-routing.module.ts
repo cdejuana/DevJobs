@@ -43,9 +43,14 @@ const routes: Routes = [
   {
     path: 'recuperacion-contrasena',
     loadChildren: () => import('./recuperacion-contrasena/recuperacion-contrasena.module').then( m => m.RecuperacionContrasenaPageModule)
-  },  {
+  },
+  {
     path: 'resultados-busqueda',
     loadChildren: () => import('./resultados-busqueda/resultados-busqueda.module').then( m => m.ResultadosBusquedaPageModule)
+  },
+  {
+    path: 'oferta-detalles-busqueda',
+    loadChildren: () => import('./oferta-detalles-busqueda/oferta-detalles-busqueda.module').then( m => m.OfertaDetallesBusquedaPageModule)
   }
 
 
