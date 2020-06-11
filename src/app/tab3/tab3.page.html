@@ -22,7 +22,11 @@
 
           <ion-label class="label-datos">Foto de perfil</ion-label>
           <ion-img class="foto-perfil ion-text-center" src="../assets/img/icono-gastro-empleo.jpg"></ion-img>
-          <ion-input type="file" placeholder="Email" class="ion-margin"></ion-input>
+          <!-- <ion-input type="file" class="ion-margin"></ion-input> -->
+          <ion-select placeholder="Subir foto">
+            <ion-select-option value="camara">Desde la cámara</ion-select-option>
+            <ion-select-option value="galeria">Desde la galería</ion-select-option>
+          </ion-select>
         
 
           <ion-label class="label-datos">Fecha de nacimiento</ion-label>
@@ -52,9 +56,14 @@
           <ion-button type="button" class="bree ion-text-uppercase boton-ancho ion-margin">Guardar cambios</ion-button>                  
         </form>
 
-        <ion-button type="button" class="bree ion-text-uppercase boton-ancho ion-margin" [routerLink]="['/bienvenida-inicio']"  color="dark">Cerrar sesión</ion-button>
-        <p class="ion-text-center lato-light">Si desea eliminar su perfil, pulse:</p>  
-        <a id="enlace-eliminar-perfil" class="ion-text-center ion-text-uppercase bree enlace-resaltado-gris">Eliminar perfil</a>
+        <ion-button type="button" class="bree ion-text-uppercase boton-ancho ion-margin" [routerLink]="['/bienvenida-inicio']"  color="dark">Cerrar sesión</ion-button>        
+        <p class="ion-text-center lato-light">Si desea eliminar su perfil, pulse:
+        <a id="enlace-eliminar-perfil" class="ion-text-center ion-text-uppercase bree enlace-resaltado-gris">Eliminar perfil</a></p>  
+        <p class="ion-text-center">
+          <ion-text class="lato-light">¿Necesitas más información o quieres ponerte en contacto con nosotros?</ion-text><br>
+          <a href="https://www.gastroempleo.com/preguntas-frecuentes/" class="ion-text-center bree ion-text-uppercase enlace-resaltado-gris">Consulta nuestros temas de ayuda</a>
+        </p>
+        <br><br><br>
       </ion-col>
     </ion-row>
   </ion-grid>
