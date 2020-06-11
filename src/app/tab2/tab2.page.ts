@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class Tab2Page {
 
-  private ofertas=[
+  protected ofertas=[
     {
       id: "1",
       id_empresa:"HakunaMatataVegie",
@@ -16,6 +16,12 @@ export class Tab2Page {
       id_contrato:"Indefinido",
       id_jornada:"Completa",
       leido: true,
+      comentarios: [
+        { comentario: "1"},
+        { comentario: "2"},
+        { comentario: "3"},
+        { comentario: "4"}
+      ],
 
       titulo: "Cocinero para restaurante vegano",
       descripcion: "",
@@ -32,6 +38,7 @@ export class Tab2Page {
       id_contrato:"Indefinido",
       id_jornada:"Completa",
       leido: false,
+      comentarios: [],
 
       titulo: "Repartidor",
       descripcion: "",
@@ -48,6 +55,7 @@ export class Tab2Page {
       id_contrato:"Indefinido",
       id_jornada:"Completa",
       leido: false,
+      comentarios: [],
 
       titulo: "Jefe de cocina",
       descripcion: "",
@@ -64,6 +72,12 @@ export class Tab2Page {
       id_contrato:"Indefinido",
       id_jornada:"Completa",
       leido: true,
+      comentarios: [
+        { comentario: "1"},
+        { comentario: "2"},
+        { comentario: "3"},
+        { comentario: "4"}
+      ],
 
       titulo: "Cocinero para restaurante vegano",
       descripcion: "",
@@ -80,6 +94,12 @@ export class Tab2Page {
       id_contrato:"Indefinido",
       id_jornada:"Completa",
       leido: true,
+      comentarios: [
+        { comentario: "1"},
+        { comentario: "2"},
+        { comentario: "3"},
+        { comentario: "4"}
+      ],
 
       titulo: "Repartidor",
       descripcion: "",
@@ -96,6 +116,12 @@ export class Tab2Page {
       id_contrato:"Indefinido",
       id_jornada:"Completa",
       leido: true,
+      comentarios: [
+        { comentario: "1"},
+        { comentario: "2"},
+        { comentario: "3"},
+        { comentario: "4"}
+      ],
 
       titulo: "Jefe de cocina",
       descripcion: "",
