@@ -164,6 +164,10 @@ ion-icon#anterior, ion-icon#siguiente {
   color: #999999;
 }
 
+ion-icon#siguiente {
+  right: 12px;
+}
+
 .contenedor-resumen-oferta {
   font-weight: 300;
   font-size: 1.2em;
@@ -200,6 +204,6 @@ ion-icon#anterior, ion-icon#siguiente {
 }
 
 .icono-siguiente {
-  // left: 10px;
+  text-align: right;
   flex-grow: 1;
 }

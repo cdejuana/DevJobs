@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultadosBusquedaPage implements OnInit {
 
-  private ofertas=[
+  public ofertas=[
     {
       id: "1",
       id_empresa:"HakunaMatataVegie",
