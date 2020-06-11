@@ -8,19 +8,25 @@
 </ion-header>
 
 <ion-content>
+  <div class="navegador-ofertas">
+    <div class="icono-anterior">
+      <a><ion-icon id="anterior" name="chevron-back-circle-outline"></ion-icon></a>
+    </div>
+    <div class="n-ofertas">
+      <ion-title class="ion-text-center">   
+        <h4 class="bree">Mis ofertas: 1 de 144</h4>
+      </ion-title>
+    </div>
+    <div class="icono-siguiente">
+      <a><ion-icon id="siguiente" name="chevron-forward-circle-outline"></ion-icon></a>
+    </div>
+  </div>
   <ion-grid>
     <ion-row>
-      <ion-title class="ion-text-center">
-        <h4 class="bree">Mis ofertas: 1 de 144</h4>
-      </ion-title>        
-    </ion-row>
-    <ion-row>
-      <ion-icon id="anterior"  name="chevron-back-circle-outline"></ion-icon>
-      <ion-title class="titulo-detalle-oferta">Jefe de cocina</ion-title>
-      <ion-icon id="siguiente"  name="chevron-forward-circle-outline"></ion-icon>
+      <ion-title class="titulo-detalle-oferta">Jefe de cocina</ion-title>      
     </ion-row>
     <ion-row class="cabecera">
-      <ion-col>      
+      <ion-col>
         <ion-badge class="sector-oferta datos-resumen-oferta" color="secondary">Cocina</ion-badge>
         <ion-badge class="datos-resumen-oferta sector-oferta" color="primary">En proceso</ion-badge>
         <!-- <ion-badge *ngIf="!oferta.leido" class="datos-resumen-oferta sector-oferta" color="dark">No leído</ion-badge> -->
@@ -30,7 +36,7 @@
       </ion-col>
     </ion-row>
     <ion-row class="resumen">
-      <ion-col>      
+      <ion-col>
       <h1>Resumen</h1>
       <div class="contenedor-resumen-oferta">
         <ul>

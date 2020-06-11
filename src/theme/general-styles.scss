@@ -158,18 +158,10 @@ ion-item:not(:first-child) {
 
 ion-icon#anterior, ion-icon#siguiente {
   position: relative;
-  top: 14px;
+  top: 5px;
   vertical-align: middle;
-  font-size: 2em;
+  font-size: 3em;
   color: #999999;
-}
-
-ion-icon#anterior {
-  right: 10px;
-}
-
-ion-icon#siguiente {
-  left: 10px;
 }
 
 .contenedor-resumen-oferta {
@@ -189,4 +181,25 @@ ion-icon#siguiente {
 .contenedor-descripcion-oferta {
   font-weight: 300;
   font-size: 1.5em;
+}
+
+.navegador-ofertas {
+  display: flex;
+  width: 100%;
+  margin: 20px 5px 0 5px;
+  align-items: stretch;
+}
+
+.n-ofertas {
+  flex-grow: 8;
+}
+
+.icono-anterior {
+  // right: 10px;
+  flex-grow: 1;
+}
+
+.icono-siguiente {
+  // left: 10px;
+  flex-grow: 1;
 }
