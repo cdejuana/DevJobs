@@ -13,7 +13,14 @@ export class LoginPage implements OnInit {
   formData: any;
   isSubmitted = false;
 
-  constructor(public usuarios: UsuariosService, public router: Router) { }
+  constructor(public usuarios: UsuariosService, public router: Router) {
+    this.formData = {
+      email: "",
+      password: "",
+      recordarUsuario: false,
+      errorAcceso: false
+    }
+  }
 
   ngOnInit() {
   }

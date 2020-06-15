@@ -207,3 +207,14 @@ ion-icon#siguiente {
   text-align: right;
   flex-grow: 1;
 }
+
+.checkbox-container ion-label {
+  position: relative;
+  bottom: 18px;
+}
+
+ion-text.validador {
+  display: block;
+  width: 90% !important;
+  margin: auto;
+}
