@@ -2,14 +2,6 @@
     margin-left: 5%;
 }
 
-ion-input:not(.contrasenia) {
-    margin-bottom: 10%;
-}
-
-ion-textarea {
-    margin: 5% 0 10% 4%;
-}
-
 .foto-perfil {
     width: 50%;
     margin: 15px auto ;
@@ -24,9 +16,29 @@ p.texto-pequenio {
     margin-bottom: 50px;
 }
 
-ion-input, ion-textarea {
-    background-color: white !important;
-    border: 0px;
+ion-input, ion-textarea{
+    width: 90%;
+    margin: auto;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    border-radius: 8px;
+    font-size: 1.1em;    
+    border: 1px solid #f1f1f1 !important;
+    --background: white;
+    --padding-start: 2%;
+    --padding-end: 2%;
+  }
+
+  ion-input:not(.contrasenia) {
+    margin-bottom: 10%;
+}
+
+ion-textarea {
+    margin-bottom: 3em;
+}
+
+ion-select {
+    margin-bottom: 3em;
 }
 
 ion-label {
