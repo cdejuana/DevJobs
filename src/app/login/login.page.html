@@ -17,19 +17,26 @@
     </ion-row>
     <ion-row class="row-bottom">
       <ion-col>
-        <form>
-          <ion-input type="text" placeholder="Email" class="ion-margin"></ion-input>
-          <ion-input type="text" placeholder="Contraseña" class="ion-margin"></ion-input>
+        <form #f="ngForm" (ngSubmit)="login(f)" novalidate>
+          <ion-input type="email" name="email" placeholder="Email" required minlength="8" [(ngModel)]="formData.email" #emailCtrl="ngModel" class="ion-margin"></ion-input>
+          <ion-text *ngIf="!emailCtrl.valid && emailCtrl.touched" color="danger" class="validador">Debes introducir un email válido</ion-text>
+          
+          <ion-input type="password" name="password" placeholder="Contraseña" required [(ngModel)]="formData.password" #passwordCtrl="ngModel" class="ion-margin"></ion-input>
+          <ion-text *ngIf="!passwordCtrl.valid && passwordCtrl.touched" color="danger" class="validador">Debes introducir una contraseña válida</ion-text>
+          <ion-text *ngIf="formData.errorAcceso" color="danger" class="validador">Error en inicio de sesión</ion-text>
+
           <div class="ion-margin checkbox-container">
-            <ion-checkbox></ion-checkbox><ion-text> Recordar email y contraseña</ion-text><br>
-          </div> 
-          <ion-button type="submit" id="boton-buscar" class="bree ion-text-uppercase boton-ancho" [routerLink]="['/tabs']">Iniciar sesión</ion-button>
+            <ion-toggle name="recordarUsuario" [(ngModel)]="formData.recordarUsuario"></ion-toggle><ion-label>Recordar email y contraseña</ion-label><br>
+          </div>
+
+          <ion-button type="submit" id="boton-buscar" class="bree ion-text-uppercase boton-ancho" [disabled]="!f.valid">Iniciar sesión</ion-button>
         </form>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <a class="ion-margin ion-text-center enlace-recuperacion-contrasenia" [routerLink]="['/recuperacion-contrasena']">Tengo problemas para entrar</a>
+        <ion-text *ngIf="formData.errorAcceso" color="danger" class="validador">Puede que estés introduciendo un email o contraseña erróneos, o que aún no estés registrado con nosotros.</ion-text>
+        <a class="ion-margin ion-text-center enlace-recuperacion-contrasenia" [routerLink]="['/recuperacion-contrasena']">Recuperar contraseña</a>
       </ion-col>
     </ion-row>
     <ion-row>
