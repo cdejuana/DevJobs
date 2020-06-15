@@ -24,6 +24,7 @@ export class UsuariosService {
       sessionStorage.setItem("token", token);
     }
   }
+  
   getToken() {
     return localStorage.getItem("token");
   }

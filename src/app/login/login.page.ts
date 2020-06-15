@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgForm } from '@angular/forms'
+import { NgForm } from '@angular/forms';
 import { UsuariosService} from '../servicios/usuarios.service';
 
 @Component({
@@ -26,9 +26,7 @@ export class LoginPage implements OnInit {
   }
 
   login(form: NgForm) {
-    // const user = { email: this.email, password: this.password };
     const user = { email: form.value.email, password: form.value.password };
-    // console.log(this.formData.recordarUsuario);
     const suscripcionLogin = this.usuarios.login(user).subscribe( data => {
       this.usuarios.setToken(data.token, this.formData.recordarUsuario);
       this.router.navigateByUrl("/tabs");
