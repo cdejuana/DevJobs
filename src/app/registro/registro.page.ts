@@ -19,8 +19,9 @@ export class RegistroPage implements OnInit {
       email: "",
       password: "",
       confirmPassword: "",
+      coincidenPasswords: false,
       recordarUsuario: false,
-      aceptoTerminos: false
+      aceptoTerminos: false,      
     }
   }
 
@@ -37,5 +38,11 @@ export class RegistroPage implements OnInit {
       console.log(error);
     });
   }
+
+  // compruebaPassword() {
+  //   if ((this.formData.password != "") && (this.formData.password == this.formData.confirmPassword)) {
+  //     this.formData.coincidenPasswords = true;
+  //   }
+  // }
 
 }

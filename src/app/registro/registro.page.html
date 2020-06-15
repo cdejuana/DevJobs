@@ -27,7 +27,7 @@
           <ion-input type="password" name="password" placeholder="Contraseña" required [(ngModel)]="formData.password" #passwordCtrl="ngModel" class="ion-margin"></ion-input>
           <ion-text *ngIf="!passwordCtrl.valid && passwordCtrl.touched" color="danger" class="validador">Debes introducir una contraseña válida</ion-text>
 
-          <ion-input type="password" name="confirmPassword" placeholder="Repetir contraseña" required [(ngModel)]="formData.confirmPassword" #confirmPasswordCtrl="ngModel" class="ion-margin"></ion-input>    
+          <ion-input type="password" name="confirmPassword" placeholder="Repetir contraseña" required [(ngModel)]="formData.confirmPassword" #confirmPasswordCtrl="ngModel" class="ion-margin" (blur)="compruebaPassword()"></ion-input>    
           <ion-text *ngIf="(!formData.confirmPassword && passwordCtrl.touched) || (!formData.confirmPassword && confirmPasswordCtrl.touched)" color="danger" class="validador">Debes repetir la contraseña</ion-text>
 
           <ion-text *ngIf="(formData.password != formData.confirmPassword)  && passwordCtrl.touched && (formData.confirmPassword != '')" color="danger" class="validador">Las contraseñas no coinciden</ion-text>
@@ -43,7 +43,7 @@
           </div>
           
 
-          <ion-button type="submit" id="boton-buscar" class="bree ion-text-uppercase boton-ancho" [disabled]="!f.valid">Iniciar sesión</ion-button>
+          <ion-button type="submit" id="boton-buscar" class="bree ion-text-uppercase boton-ancho" [disabled]="!formData.aceptoTerminos">Iniciar sesión</ion-button>
         </form>
       </ion-col>
     </ion-row>
