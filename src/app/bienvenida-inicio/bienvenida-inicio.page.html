@@ -18,7 +18,8 @@
         <form>
           <ion-input type="text" placeholder="Empleo o empresa"></ion-input>
           <ion-input type="text" placeholder="Madrid"><ion-icon name="location-outline" class="input-icon"></ion-icon></ion-input>
-          <ion-button type="submit" id="boton-buscar" class="bree ion-text-uppercase boton-ancho" [routerLink]="['/tabs/tab1/']">Buscar</ion-button>
+          <!-- <ion-button type="submit" id="boton-buscar" class="bree ion-text-uppercase boton-ancho" [routerLink]="['/tabs/tab1/']">Buscar</ion-button> -->
+          <ion-button type="submit" id="boton-buscar" class="bree ion-text-uppercase boton-ancho" (click)="getResultados()">Buscar</ion-button>
         </form>        
       </ion-col>
     </ion-row>
