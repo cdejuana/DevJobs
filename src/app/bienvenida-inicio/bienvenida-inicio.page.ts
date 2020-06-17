@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OfertasService} from '../servicios/ofertas.service';
 
 @Component({
   selector: 'app-bienvenida-inicio',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BienvenidaInicioPage implements OnInit {
 
-  constructor() { }
+  constructor(public ofertas: OfertasService) { }
 
   ngOnInit() {
+  }
+
+  getResultados() {
+    console.log(this.ofertas.getOfertas());
   }
 
 }
