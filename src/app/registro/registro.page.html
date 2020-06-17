@@ -17,18 +17,33 @@
     </ion-row>
     <ion-row class="row-bottom">
       <ion-col>
-        <form>
-          <ion-input type="text" placeholder="Nombre" class="ion-margin"></ion-input>
-          <ion-input type="text" placeholder="Email" class="ion-margin"></ion-input>
-          <ion-input type="text" placeholder="Contraseña" class="ion-margin"></ion-input>
-          <ion-input type="text" placeholder="Repite tu contraseña" class="ion-margin"></ion-input>
+        <form #f="ngForm" (ngSubmit)="register(f)" novalidate>
+          <ion-input type="text" name="nombre" placeholder="Nombre completo" autocomplete="on" required [(ngModel)]="formData.nombre" #nombreCtrl="ngModel" class="ion-margin"></ion-input>
+          <ion-text *ngIf="!nombreCtrl.valid && nombreCtrl.touched" color="danger" class="validador">Debes introducir un nombre</ion-text>
+
+          <ion-input type="email" name="email" placeholder="Email" autocomplete="on" required minlength="8" [(ngModel)]="formData.email" #emailCtrl="ngModel" class="ion-margin"></ion-input>
+          <ion-text *ngIf="!emailCtrl.valid && emailCtrl.touched" color="danger" class="validador">Debes introducir un email válido</ion-text>
+          
+          <ion-input type="password" name="password" placeholder="Contraseña" required [(ngModel)]="formData.password" #passwordCtrl="ngModel" class="ion-margin"></ion-input>
+          <ion-text *ngIf="!passwordCtrl.valid && passwordCtrl.touched" color="danger" class="validador">Debes introducir una contraseña válida</ion-text>
+
+          <ion-input type="password" name="confirmPassword" placeholder="Repetir contraseña" required [(ngModel)]="formData.confirmPassword" #confirmPasswordCtrl="ngModel" class="ion-margin" (blur)="compruebaPassword()"></ion-input>    
+          <ion-text *ngIf="(!formData.confirmPassword && passwordCtrl.touched) || (!formData.confirmPassword && confirmPasswordCtrl.touched)" color="danger" class="validador">Debes repetir la contraseña</ion-text>
+
+          <ion-text *ngIf="(formData.password != formData.confirmPassword)  && passwordCtrl.touched && (formData.confirmPassword != '')" color="danger" class="validador">Las contraseñas no coinciden</ion-text>
+          <ion-text *ngIf="(formData.password == formData.confirmPassword) && (formData.password != '') && confirmPasswordCtrl.touched" color="secondary" class="validador">Las contraseñas coinciden</ion-text>
+
           <div class="ion-margin checkbox-container">
-            <ion-checkbox  ></ion-checkbox ><ion-text> Recordar email y contraseña</ion-text><br>
-          </div> 
-          <div class="ion-margin checkbox-container"> 
-            <ion-checkbox ></ion-checkbox><ion-text> Acepto los <a href="/textos-legales"> términos y condiciones </a> de gastroempleo</ion-text>
+            <ion-toggle name="recordarUsuario" #recordarUsuarioCtrl="ngModel" [(ngModel)]="formData.recordarUsuario"></ion-toggle>
+            <ion-label for="recordarUsuario">Recordar email y contraseña</ion-label><br>
           </div>
-            <ion-button type="submit" id="boton-buscar" class="bree ion-text-uppercase boton-ancho" [routerLink]="['']">Registrarme</ion-button>
+          <div class="ion-margin checkbox-container"> 
+            <ion-toggle name="aceptoTerminos" required #aceptoTerminosCtrl="ngModel" [(ngModel)]="formData.aceptoTerminos"></ion-toggle>
+            <ion-label for="aceptoTerminos">Acepto los <a href="/textos-legales"> términos y condiciones </a> de gastroempleo</ion-label>
+          </div>
+          
+
+          <ion-button type="submit" id="boton-buscar" class="bree ion-text-uppercase boton-ancho" [disabled]="!formData.aceptoTerminos">Iniciar sesión</ion-button>
         </form>
       </ion-col>
     </ion-row>
