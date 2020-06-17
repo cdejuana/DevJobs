@@ -29,7 +29,8 @@ export class RegistroPage implements OnInit {
   }
 
   register(form: NgForm) {
-    const user = { email: form.value.email, password: form.value.password };
+    // const user = { email: form.value.email, password: form.value.password };
+    const user = { nombre: form.value.nombre, email: form.value.email, password: form.value.password };    
     this.usuario.register(user).subscribe( data => {
       this.usuario.setToken(data.token, this.formData.recordarUsuario);
       this.router.navigateByUrl("/tabs");
