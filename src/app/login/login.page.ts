@@ -25,20 +25,24 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-  login(form: NgForm) {
-    const user = { email: form.value.email, password: form.value.password };
-    const suscripcionLogin = this.usuarios.login(user).subscribe( data => {
-      this.usuarios.setToken(data.token, this.formData.recordarUsuario);
-      this.router.navigateByUrl("/tabs");
-    },
-    error => {
-      this.formData.errorAcceso = true;
-      console.log(error);
-    });
+  // login(form: NgForm) {
+  //   const user = { email: form.value.email, password: form.value.password };
+  //   const suscripcionLogin = this.usuarios.login(user).subscribe( data => {
+  //     this.usuarios.setToken(data.token, this.formData.recordarUsuario);
+  //     this.router.navigateByUrl("/tabs");
+  //   },
+  //   error => {
+  //     this.formData.errorAcceso = true;
+  //     console.log(error);
+  //   });
 
-    if (suscripcionLogin.closed) {
-      suscripcionLogin.unsubscribe();
-    }
+  //   if (suscripcionLogin.closed) {
+  //     suscripcionLogin.unsubscribe();
+  //   }
+  // }
+
+  login() {
+    this.router.navigateByUrl("/tabs");
   }
 
 }
