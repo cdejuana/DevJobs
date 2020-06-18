@@ -9,15 +9,16 @@ export class UsuariosService {
 
   constructor(private http: HttpClient) { }
 
-  login(user: any): Observable<any> {
+  public login(user: any): Observable<any> {
     return this.http.post("https://reqres.in/api/login", user);
   }
 
-  register(user: any): Observable<any> {
+  public register(user: any): Observable<any> {
     return this.http.post("https://reqres.in/api/register", user);
   }
 
-  setToken(token: string, recordar: boolean) {
+  // AQUI ES POSIBLE QUE TENGAMOS QUE USAR JSON.STRINGIFY()
+  public setToken(token: string, recordar: boolean) {
     if(recordar){
       localStorage.setItem('token', token);
     } else {
@@ -25,11 +26,12 @@ export class UsuariosService {
     }
   }
   
-  getToken() {
+  // Y AQUI JSON.PARSE()
+  public getToken() {
     return localStorage.getItem("token");
   }
 
-  cerrarSesion() {
+  public cerrarSesion() {
     sessionStorage.removeItem("token");
     localStorage.removeItem('token');
   }

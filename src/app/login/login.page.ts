@@ -25,7 +25,7 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-  // login(form: NgForm) {
+  // private login(form: NgForm) {
   //   const user = { email: form.value.email, password: form.value.password };
   //   const suscripcionLogin = this.usuarios.login(user).subscribe( data => {
   //     this.usuarios.setToken(data.token, this.formData.recordarUsuario);
@@ -42,7 +42,7 @@ export class LoginPage implements OnInit {
   //   }
   // }
 
-  login() {
+  private login() {
     this.router.navigateByUrl("/tabs");
   }
 

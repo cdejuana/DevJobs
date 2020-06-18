@@ -13,7 +13,7 @@ export class BienvenidaInicioPage implements OnInit {
   ngOnInit() {
   }
 
-  getResultados() {
+  private getResultados() {
     const suscripcionOfertas = this.ofertas.getOfertas().subscribe( data => {
       console.log(data);
     },

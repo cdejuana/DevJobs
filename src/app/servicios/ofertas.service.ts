@@ -10,7 +10,7 @@ export class OfertasService {
 
   constructor(private http: HttpClient) { }
 
-  getOfertas(): Observable<any> {
+  public getOfertas(): Observable<any> {
     return this.http.get("https://reqres.in/api/users?page=2");
   }
 }
