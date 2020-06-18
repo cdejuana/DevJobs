@@ -12,6 +12,7 @@ export class RegistroPage implements OnInit {
 
   formData: any;
   isSubmitted = false;
+  public suscripcionRegistro;
 
   constructor(public usuario: UsuariosService, public router: Router) {
     this.formData = {
@@ -31,7 +32,7 @@ export class RegistroPage implements OnInit {
   register(form: NgForm) {
     // const user = { email: form.value.email, password: form.value.password };
     const user = { nombre: form.value.nombre, email: form.value.email, password: form.value.password };    
-    this.usuario.register(user).subscribe( data => {
+    this.suscripcionRegistro = this.usuario.register(user).subscribe( data => {
       this.usuario.setToken(data.token, this.formData.recordarUsuario);
       this.router.navigateByUrl("/tabs");
     },
@@ -44,6 +45,12 @@ export class RegistroPage implements OnInit {
   //   if ((this.formData.password != "") && (this.formData.password == this.formData.confirmPassword)) {
   //     this.formData.coincidenPasswords = true;
   //   }
+  // }
+
+  // ngOnDestroy(): void {
+  //   if (!this.suscripcionRegistro.closed) {
+  //     this.suscripcionRegistro.unsubscribe();
+  //   }    
   // }
 
 }

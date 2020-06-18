@@ -12,6 +12,7 @@ export class LoginPage implements OnInit {
 
   formData: any;
   isSubmitted = false;
+  public suscripcionLogin;
 
   constructor(public usuarios: UsuariosService, public router: Router) {
     this.formData = {
@@ -27,7 +28,7 @@ export class LoginPage implements OnInit {
 
   // private login(form: NgForm) {
   //   const user = { email: form.value.email, password: form.value.password };
-  //   const suscripcionLogin = this.usuarios.login(user).subscribe( data => {
+  //   suscripcionLogin = this.usuarios.login(user).subscribe( data => {
   //     this.usuarios.setToken(data.token, this.formData.recordarUsuario);
   //     this.router.navigateByUrl("/tabs");
   //   },
@@ -36,14 +37,14 @@ export class LoginPage implements OnInit {
   //     console.log(error);
   //   });
 
-  //  NO PONER ESTO, NO ESTÁ BIEN DEL TODO, INVESTIGAR
-  //   if (suscripcionLogin.closed) {
-  //     suscripcionLogin.unsubscribe();
-  //   }
-  // }
-
   private login() {
     this.router.navigateByUrl("/tabs");
   }
+
+  // ngOnDestroy(): void {
+  //   if (!this.suscripcionLogin.closed) {
+  //     this.suscripcionLogin.unsubscribe();
+  //   }    
+  // }
 
 }

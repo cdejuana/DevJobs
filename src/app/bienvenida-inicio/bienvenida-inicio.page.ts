@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { OfertasService} from '../servicios/ofertas.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-bienvenida-inicio',
   templateUrl: './bienvenida-inicio.page.html',
   styleUrls: ['./bienvenida-inicio.page.scss'],
 })
-export class BienvenidaInicioPage implements OnInit {
+export class BienvenidaInicioPage implements OnInit, OnDestroy {
 
   public listaUsuarios: Array<any>;
+  public suscripcionOfertas;
 
   constructor(public ofertas: OfertasService) { }
 
@@ -16,7 +18,7 @@ export class BienvenidaInicioPage implements OnInit {
   }
 
   public getResultados() {
-    const suscripcionOfertas = this.ofertas.getOfertas().subscribe( data => {
+    this.suscripcionOfertas = this.ofertas.getOfertas().subscribe( data => {
       
       data.data.forEach(element => {
         console.log("ID: " + element.id);
@@ -27,11 +29,12 @@ export class BienvenidaInicioPage implements OnInit {
     },
     error => {
       console.log(error);
-    });
-
-    // if (!suscripcionOfertas.closed) {
-    //   suscripcionOfertas.unsubscribe();
-    // }    
+    });    
   }
 
+  ngOnDestroy(): void {
+    if (!this.suscripcionOfertas.closed) {
+      this.suscripcionOfertas.unsubscribe();
+    }    
+  }
 }
