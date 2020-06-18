@@ -21,9 +21,9 @@ export class BienvenidaInicioPage implements OnInit {
       console.log(error);
     });
 
-    if (suscripcionOfertas.closed) {
-      suscripcionOfertas.unsubscribe();
-    }    
+    // if (!suscripcionOfertas.closed) {
+    //   suscripcionOfertas.unsubscribe();
+    // }    
   }
 
 }

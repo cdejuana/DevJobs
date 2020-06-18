@@ -36,6 +36,7 @@ export class LoginPage implements OnInit {
   //     console.log(error);
   //   });
 
+  //  NO PONER ESTO, NO ESTÁ BIEN DEL TODO, INVESTIGAR
   //   if (suscripcionLogin.closed) {
   //     suscripcionLogin.unsubscribe();
   //   }
