@@ -14,7 +14,16 @@ export class BienvenidaInicioPage implements OnInit {
   }
 
   getResultados() {
-    console.log(this.ofertas.getOfertas());
+    const suscripcionOfertas = this.ofertas.getOfertas().subscribe( data => {
+      console.log(data);
+    },
+    error => {
+      console.log(error);
+    });
+
+    if (suscripcionOfertas.closed) {
+      suscripcionOfertas.unsubscribe();
+    }    
   }
 
 }
