@@ -8,14 +8,22 @@ import { OfertasService} from '../servicios/ofertas.service';
 })
 export class BienvenidaInicioPage implements OnInit {
 
+  public listaUsuarios: Array<any>;
+
   constructor(public ofertas: OfertasService) { }
 
   ngOnInit() {
   }
 
-  private getResultados() {
+  public getResultados() {
     const suscripcionOfertas = this.ofertas.getOfertas().subscribe( data => {
-      console.log(data);
+      
+      data.data.forEach(element => {
+        console.log("ID: " + element.id);
+        console.log("Email: " + element.email);
+        console.log("First Name: " + element.first_name);
+      });
+      // console.log(data.data);
     },
     error => {
       console.log(error);
