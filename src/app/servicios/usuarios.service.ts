@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
+import { Usuario } from '../usuario';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuariosService {
+  PHP_API_SERVER = "http://127.0.0.1:3306";
 
   constructor(private http: HttpClient) { }
 
