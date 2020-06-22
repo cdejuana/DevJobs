@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { OfertasService} from '../servicios/ofertas.service';
 import { Busqueda } from '../servicios/busqueda';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-bienvenida-inicio',
@@ -14,7 +15,7 @@ export class BienvenidaInicioPage implements OnInit, OnDestroy {
   public localizacion: string;
   public criterioDeBusqueda: Busqueda = {terminos: "", localizacion: ""};
 
-  constructor(public ofertas: OfertasService) {
+  constructor(public ofertas: OfertasService, public router: Router) {
   }
 
   ngOnInit() {
@@ -24,7 +25,8 @@ export class BienvenidaInicioPage implements OnInit, OnDestroy {
     this.criterioDeBusqueda.terminos = this.terminosbusqueda;
     this.criterioDeBusqueda.localizacion = this.localizacion;
     this.suscripcionOfertas = this.ofertas.verOfertas(this.criterioDeBusqueda).subscribe( data => {      
-      console.log(data);
+      this.ofertas.guardaListaOfertas(data);
+      this.router.navigateByUrl("/resultados-busqueda");
     },
     error => {
       console.log(error);

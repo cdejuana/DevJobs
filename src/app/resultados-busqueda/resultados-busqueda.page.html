@@ -14,13 +14,13 @@
   <ion-grid>
     <ion-row>
       <ion-title class="ion-text-center">
-        <h3 class="bree">144 resultados de busqueda</h3>
+        <h3 class="bree">{{listaOfertas.length}} resultados de busqueda</h3>
       </ion-title>
     </ion-row>
   </ion-grid>
 
   <ion-list>
-    <ion-item *ngFor="let oferta of ofertas" >
+    <ion-item *ngFor="let oferta of pagina" >
     <a [routerLink]="['/oferta-detalles-busqueda']">
       <ion-grid>
         <ion-row>
@@ -57,5 +57,5 @@
     </a>
     </ion-item>
   </ion-list>
-
+  <a *ngIf="listaOfertas.length > 10" href="">Paginacion</a>
 </ion-content>

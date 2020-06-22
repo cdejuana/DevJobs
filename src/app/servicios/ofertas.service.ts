@@ -9,6 +9,7 @@ import { Busqueda } from './busqueda';
 })
 export class OfertasService {
   PHP_API_SERVER = "localhost:3306";
+  public listadoOfertas: Oferta[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -16,8 +17,13 @@ export class OfertasService {
   //   return this.http.get("https://reqres.in/api/users?page=2");
   // }
 
-  verOfertas(busqueda: Busqueda): Observable<Oferta[]>{
+  public verOfertas(busqueda: Busqueda): Observable<Oferta[]>{
     return this.http.get<Oferta[]>(`http://localhost:80/api/read_ofertas.php?terminos=` + busqueda.terminos + `&localizacion=` + busqueda.localizacion);
-    // return this.http.get<Oferta[]>(`http://localhost:80/api/read_ofertas.php`);
+  }
+
+  public guardaListaOfertas(ofertas) {
+    for (let oferta of ofertas) {
+      this.listadoOfertas.push(oferta);
+    }
   }
 }
