@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { UsuariosService} from '../servicios/usuarios.service';
@@ -8,7 +8,7 @@ import { UsuariosService} from '../servicios/usuarios.service';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginPage implements OnInit, OnDestroy  {
 
   formData: any;
   isSubmitted = false;
@@ -26,24 +26,26 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-  private login(form: NgForm) {
-    const user = { email: form.value.email, password: form.value.password };
-    this.suscripcionLogin = this.usuarios.login(user).subscribe( data => {
-      this.usuarios.setToken(data.token, this.formData.recordarUsuario);
-      this.router.navigateByUrl("/tabs");
-    },
-    error => {
-      this.formData.errorAcceso = true;
-      console.log(error);
-    });
-
-  // public login() {
-  //   this.router.navigateByUrl("/tabs");
+  // public login(form: NgForm) {
+  //   const user = { email: form.value.email, password: form.value.password };
+  //   this.suscripcionLogin = this.usuarios.login(user).subscribe( data => {
+  //     this.usuarios.setToken(data.token, this.formData.recordarUsuario);
+  //     this.router.navigateByUrl("/tabs");
+  //   },
+  //   error => {
+  //     this.formData.errorAcceso = true;
+  //     console.log(error);
+  //   });
   // }
-}
 
-ngOnDestroy(): void {
-  if (!this.suscripcionLogin.closed) {
-    this.suscripcionLogin.unsubscribe();
-  }    
+  public login() {
+    this.router.navigateByUrl("/tabs");
+  }
+
+  ngOnDestroy(): void {
+    if (!this.suscripcionLogin.closed) {
+      this.suscripcionLogin.unsubscribe();
+    }    
+  }
+  
 }

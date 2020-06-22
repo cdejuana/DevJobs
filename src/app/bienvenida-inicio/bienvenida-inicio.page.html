@@ -15,13 +15,10 @@
     </ion-row>
     <ion-row class="row-bottom">
       <ion-col>
-        <!-- <form #f="ngForm" (ngSubmit)="getResultados(f)" novalidate> -->
         <form>
           <ion-input name="terminosbusqueda" [(ngModel)]="terminosbusqueda" type="text" placeholder="Empleo o empresa"></ion-input>
           <ion-input name="localizacion" [(ngModel)]="localizacion"  type="text" placeholder="Madrid"><ion-icon name="location-outline" class="input-icon"></ion-icon></ion-input>
-          <!-- <ion-button type="submit" id="boton-buscar" class="bree ion-text-uppercase boton-ancho" [routerLink]="['/tabs/tab1/']">Buscar</ion-button> -->
-          <ion-button type="submit" id="boton-buscar" class="bree ion-text-uppercase boton-ancho" (click)="getResultados(terminosbusqueda, localizacion)">Buscar</ion-button>
-          <!-- <ion-button type="submit" id="boton-buscar" class="bree ion-text-uppercase boton-ancho">Buscar</ion-button> -->
+          <ion-button type="submit" id="boton-buscar" class="bree ion-text-uppercase boton-ancho" (click)="getResultados()">Buscar</ion-button>
         </form>        
       </ion-col>
     </ion-row>
