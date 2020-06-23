@@ -9,7 +9,7 @@ import { Busqueda } from './busqueda';
 })
 export class OfertasService {
   PHP_API_SERVER = "localhost:3306";
-  public listadoOfertas: Oferta[] = [];
+  public listadoOfertas: Array<Oferta> = new Array<Oferta>();
 
   constructor(private http: HttpClient) { }
 

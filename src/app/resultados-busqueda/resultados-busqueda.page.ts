@@ -9,7 +9,7 @@ import { Oferta } from './../oferta';
 })
 export class ResultadosBusquedaPage implements OnInit {
 
-  private listaOfertas: Array<Oferta>;
+  public listaOfertas: Array<Oferta>;
   public ofertasMostradas: Array<Oferta>;
   private ofertasSiguientes: Array<Oferta>;
   private contadorMostradas: number;
@@ -18,16 +18,27 @@ export class ResultadosBusquedaPage implements OnInit {
   constructor(public ofertas: OfertasService) { }
 
   ngOnInit() {
-    this.listaOfertas = this.ofertas.listadoOfertas;
+    // this.maximoMostradas = Math.round(this.ofertas.listadoOfertas.length / 10)
+    this.maximoMostradas = this.ofertas.listadoOfertas.length;
+    this.listaOfertas = this.ofertas.listadoOfertas;    
+
     if(this.ofertas.listadoOfertas.length > 10){      
       this.ofertasMostradas = this.listaOfertas.slice(0, 10);
     } else {
       this.listaOfertas = this.ofertas.listadoOfertas;
     }
+
+    this.contadorMostradas = this.ofertasMostradas.length;
+    console.log(this.contadorMostradas);
   }
 
-  public aniadirOfertas() {
-
-  }
+  // public aniadirOfertas() {
+  //   this.contadorMostradas = this.ofertasMostradas.length;
+  //   this.ofertasSiguientes = this.listaOfertas.slice(this.contadorMostradas, this.contadorMostradas + 10);
+  //   for (let index = 0; index < this.ofertasSiguientes.length; index++) {
+  //     //const element = array[index];
+      
+  //   }
+  // }
 
 }

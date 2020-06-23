@@ -20,7 +20,7 @@
   </ion-grid>
 
   <ion-list>
-    <ion-item *ngFor="let oferta of pagina" >
+    <ion-item *ngFor="let oferta of ofertasMostradas" >
     <a [routerLink]="['/oferta-detalles-busqueda']">
       <ion-grid>
         <ion-row>
@@ -57,5 +57,4 @@
     </a>
     </ion-item>
   </ion-list>
-  <a *ngIf="listaOfertas.length > 10" href="">Paginacion</a>
 </ion-content>
