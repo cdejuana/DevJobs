@@ -9,20 +9,22 @@ import { Oferta } from './../oferta';
 })
 export class ResultadosBusquedaPage implements OnInit {
 
-  public listaOfertas: Oferta[] = [];
-  public pagina: Oferta[] = [];
+  private listaOfertas: Array<Oferta>;
+  public ofertasMostradas: Array<Oferta>;
+  private ofertasSiguientes: Array<Oferta>;
+  private contadorMostradas: number;
+  private maximoMostradas: number;
 
-  constructor(public ofertas: OfertasService) {
-    if(this.ofertas.listadoOfertas.length > 10){
-      this.listaOfertas = this.ofertas.listadoOfertas;
-      this.pagina = this.listaOfertas.slice(0, 10);
+  constructor(public ofertas: OfertasService) { }
+
+  ngOnInit() {
+    this.listaOfertas = this.ofertas.listadoOfertas;
+    if(this.ofertas.listadoOfertas.length > 10){      
+      this.ofertasMostradas = this.listaOfertas.slice(0, 10);
     } else {
       this.listaOfertas = this.ofertas.listadoOfertas;
     }
     // console.log(this.ofertas.listadoOfertas.length);
-  }
-
-  ngOnInit() {
   }
 
 }
