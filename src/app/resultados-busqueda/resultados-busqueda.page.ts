@@ -29,7 +29,6 @@ export class ResultadosBusquedaPage implements OnInit {
     }
 
     this.contadorMostradas = this.ofertasMostradas.length;
-    console.log(this.contadorMostradas);
   }
 
   // public aniadirOfertas() {
