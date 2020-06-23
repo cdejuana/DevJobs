@@ -24,7 +24,10 @@ export class ResultadosBusquedaPage implements OnInit {
     } else {
       this.listaOfertas = this.ofertas.listadoOfertas;
     }
-    // console.log(this.ofertas.listadoOfertas.length);
+  }
+
+  public aniadirOfertas() {
+
   }
 
 }
