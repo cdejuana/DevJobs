@@ -34,20 +34,20 @@
           <ion-col>
             <ion-badge class="datos-resumen-oferta sector-oferta" color="secondary">{{oferta.id_sector}}</ion-badge>
            
-            <div *ngIf="oferta.id_empresa != undefined" class="datos-resumen-oferta"><span class="id-empresa">{{oferta.id_empresa}}</span></div>
-            <div *ngIf="oferta.id_localidad != undefined" class="datos-resumen-oferta">
+            <div *ngIf="oferta.id_empresa" class="datos-resumen-oferta"><span class="id-empresa">{{oferta.id_empresa}}</span></div>
+            <div *ngIf="oferta.id_localidad" class="datos-resumen-oferta">
               <ion-icon name="location"></ion-icon>
               {{oferta.id_localidad}}
             </div>
-            <div *ngIf="oferta.fecha_alta != undefined" class="datos-resumen-oferta">
+            <div *ngIf="oferta.fecha_alta" class="datos-resumen-oferta">
               <ion-icon name="time"></ion-icon>
               Desde {{oferta.fecha_alta}}
             </div>
-            <div *ngIf="oferta.salario != undefined" class="datos-resumen-oferta">
+            <div *ngIf="oferta.salario" class="datos-resumen-oferta">
               <ion-icon name="logo-euro"></ion-icon>
               {{oferta.salario}}
             </div>
-            <div *ngIf="oferta.id_jornada != undefined" class="datos-resumen-oferta">
+            <div *ngIf="oferta.id_jornada" class="datos-resumen-oferta">
               <ion-icon name="calendar"></ion-icon>
               Jornada {{oferta.id_jornada}}
             </div>
