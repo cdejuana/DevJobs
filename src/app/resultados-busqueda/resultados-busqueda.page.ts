@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { OfertasService} from '../servicios/ofertas.service';
 import { Oferta } from './../oferta';
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
+import { IonList, IonContent } from '@ionic/angular';
 
 @Component({
   selector: 'app-resultados-busqueda',
@@ -9,6 +10,7 @@ import {InfiniteScrollModule} from 'ngx-infinite-scroll';
   styleUrls: ['./resultados-busqueda.page.scss'],
 })
 export class ResultadosBusquedaPage implements OnInit {
+  @ViewChild(IonContent, { static: false }) content: IonContent;
 
   public listaOfertas: Array<Oferta>;
   public ofertasMostradas: Array<Oferta>;
@@ -50,6 +52,10 @@ export class ResultadosBusquedaPage implements OnInit {
     if (this.contadorMostradas < this.maximoMostradas) {
       this.aniadirOfertas();
     }
+  }
+
+  public scrollToTop() {
+    this.content.scrollToTop(1500);
   }
 
 }
