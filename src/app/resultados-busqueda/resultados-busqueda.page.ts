@@ -33,7 +33,7 @@ export class ResultadosBusquedaPage implements OnInit {
     this.contadorMostradas = this.ofertasMostradas.length;
   }
 
-  private aniadirOfertas() {  
+  private aniadirOfertas(eventoScroll) {  
     let limiteSiguientes = 0;
     if ((this.contadorMostradas + 10) > this.listaOfertas.length) {
       limiteSiguientes = this.listaOfertas.length - this.contadorMostradas;
@@ -45,12 +45,13 @@ export class ResultadosBusquedaPage implements OnInit {
       this.ofertasMostradas.push(this.ofertasSiguientes[index]);
     }
     this.contadorMostradas = this.ofertasMostradas.length;
+    eventoScroll.target.complete();
   }
 
-  public onScroll() {
+  public onScroll(eventoScroll) {
     console.log("scrolled!!");
     if (this.contadorMostradas < this.maximoMostradas) {
-      this.aniadirOfertas();
+      this.aniadirOfertas(eventoScroll);
     }
   }
 
