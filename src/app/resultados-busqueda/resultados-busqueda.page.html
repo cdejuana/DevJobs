@@ -19,7 +19,7 @@
     </ion-row>
   </ion-grid>
 
-  <ion-list>
+  <ion-list infiniteScroll infiniteScrollDistance="3" infiniteScrollThrottle="50" (scrolled)="onScroll()">
     <ion-item *ngFor="let oferta of ofertasMostradas" >
     <a [routerLink]="['/oferta-detalles-busqueda']">
       <ion-grid>
@@ -57,4 +57,5 @@
     </a>
     </ion-item>
   </ion-list>
+  <!-- <ion-button style="position: fixed; bottom: 0;" type="button" class="bree boton-login ion-text-uppercase" color="secondary" (click)="onScroll()">Cargas más ofertas</ion-button> -->
 </ion-content>
