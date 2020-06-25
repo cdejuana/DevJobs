@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { OfertasService} from '../servicios/ofertas.service';
 import { Oferta } from './../oferta';
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
-import { IonList, IonContent } from '@ionic/angular';
+import { IonContent } from '@ionic/angular';
 
 @Component({
   selector: 'app-resultados-busqueda',

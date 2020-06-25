@@ -19,8 +19,7 @@
   </ion-grid>
 
   <ion-list>
-    <ion-item *ngFor="let oferta of ofertasMostradas" >
-    <a [routerLink]="['/oferta-detalles-busqueda']">
+    <ion-item *ngFor="let oferta of ofertasMostradas" [routerLink]="['/resultados-busqueda', listaOfertas.indexOf(oferta)]">
       <ion-grid>
         <ion-row>
           <ion-col size="12" class="titulo-oferta">
@@ -53,7 +52,6 @@
           </ion-col>
         </ion-row>  
       </ion-grid>
-    </a>
     </ion-item>
   </ion-list>
   <ion-infinite-scroll threshold="100px" (ionInfinite)="onScrollEnd($event)">

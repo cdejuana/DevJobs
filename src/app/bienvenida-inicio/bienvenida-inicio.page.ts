@@ -18,10 +18,11 @@ export class BienvenidaInicioPage implements OnInit, OnDestroy {
   constructor(public ofertas: OfertasService, public router: Router) {
   }
 
-  ngOnInit() {
+  ngOnInit() {    
   }
 
   public getResultados() {
+    this.ofertas.borraOfertas();
     this.criterioDeBusqueda.terminos = this.terminosbusqueda;
     this.criterioDeBusqueda.localizacion = this.localizacion;
     this.suscripcionOfertas = this.ofertas.verOfertas(this.criterioDeBusqueda).subscribe( data => {      

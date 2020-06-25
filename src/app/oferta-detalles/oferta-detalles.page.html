@@ -10,29 +10,31 @@
 <ion-content>
   <div class="navegador-ofertas">
     <div class="icono-anterior">
-      <a><ion-icon id="anterior" name="chevron-back-circle-outline"></ion-icon></a>
+      <ion-icon *ngIf="listaOfertas.indexOf(ofertaActual) > 0" id="anterior" [routerLink]="['/resultados-busqueda', (listaOfertas.indexOf(ofertaActual) - 1)]" name="chevron-back-circle-outline"></ion-icon>
     </div>
     <div class="n-ofertas">
       <ion-title class="ion-text-center">   
-        <h4 class="bree">Mis ofertas: 1 de 144</h4>
+        <h4 class="bree">Mis ofertas: {{ indiceOferta + 1 }} de {{ listaOfertas.length }}</h4>
       </ion-title>
     </div>
     <div class="icono-siguiente">
-      <a><ion-icon id="siguiente" name="chevron-forward-circle-outline"></ion-icon></a>
+      <ion-icon *ngIf="listaOfertas.indexOf(ofertaActual) < listaOfertas.length -1" id="siguiente" [routerLink]="['/resultados-busqueda', (listaOfertas.indexOf(ofertaActual) + 1)]" name="chevron-forward-circle-outline"></ion-icon>
     </div>
   </div>
   <ion-grid>
     <ion-row>
-      <ion-title class="titulo-detalle-oferta">Jefe de cocina</ion-title>      
+      <ion-title class="titulo-detalle-oferta">{{ofertaActual.titulo}}</ion-title>      
     </ion-row>
     <ion-row class="cabecera">
       <ion-col>
-        <ion-badge class="sector-oferta datos-resumen-oferta" color="secondary">Cocina</ion-badge>
-        <ion-badge class="datos-resumen-oferta sector-oferta" color="primary">En proceso</ion-badge>
+        <ion-badge class="sector-oferta datos-resumen-oferta" color="secondary">{{ofertaActual.id_sector}}</ion-badge>
+        <!-- sólo debe mostrar el estado de la candidatura cuando está logeado -->
+        <ion-badge class="datos-resumen-oferta sector-oferta" color="primary">En proceso (revisar si logeado o no)</ion-badge>
         <!-- <ion-badge *ngIf="!oferta.leido" class="datos-resumen-oferta sector-oferta" color="dark">No leído</ion-badge> -->
-        <div class="datos-resumen-oferta id-empresa">Restaurante Verde Oliva</div>
-        <div class="datos-resumen-oferta"><ion-icon name="location"></ion-icon>Madrid</div>
-        <div class="datos-resumen-oferta"><ion-icon name="time"></ion-icon>Hace 23 horas</div>
+        <div class="datos-resumen-oferta id-empresa">{{ofertaActual.id_empresa}}</div>
+        <div class="datos-resumen-oferta"><ion-icon name="location"></ion-icon>{{ofertaActual.id_localidad}}</div>
+        <!-- fecha de alta: en la web pone: hace 11 horas / minutos / dias REVISAR -->
+        <div class="datos-resumen-oferta"><ion-icon name="time"></ion-icon>{{ofertaActual.fecha_alta}} formato correcto???</div>
       </ion-col>
     </ion-row>
     <ion-row class="resumen">
@@ -40,36 +42,20 @@
       <h1>Resumen</h1>
       <div class="contenedor-resumen-oferta">
         <ul>
-        <li><ion-text class="item-dato-oferta">Referencia: </ion-text>#58276</li>
-        <li><ion-text class="item-dato-oferta">Sector: </ion-text>Cocina</li>
-        <li><ion-text class="item-dato-oferta">Tipo de contrato: </ion-text>Indefinido</li>
-        <li><ion-text class="item-dato-oferta">Tipo de jornada: </ion-text>Completa</li>
-        <li><ion-text class="item-dato-oferta">Salario: </ion-text>1200-2000</li>
-        <li><ion-text class="item-dato-oferta">Fecha alta: </ion-text>12-05-2020</li>
-        <li><ion-text class="item-dato-oferta">Fecha limite de inscripción: </ion-text>15-06-2020</li>
+        <li><ion-text class="item-dato-oferta">Referencia: </ion-text>{{ofertaActual.Id}}</li>
+        <li><ion-text class="item-dato-oferta">Sector: </ion-text>{{ofertaActual.id_sector}}</li>
+        <li><ion-text class="item-dato-oferta">Tipo de contrato: </ion-text>{{ofertaActual.id_contrato}}</li>
+        <li><ion-text class="item-dato-oferta">Tipo de jornada: </ion-text>{{ofertaActual.id_jornada}}</li>
+        <li><ion-text class="item-dato-oferta">Salario: </ion-text>{{ofertaActual.salario}}</li>
+        <li><ion-text class="item-dato-oferta">Fecha alta: </ion-text>{{ofertaActual.fecha_alta}}</li>
+        <li><ion-text class="item-dato-oferta">Fecha limite de inscripción: </ion-text>{{ofertaActual.fecha_limite_inscripcion}}</li>
         </ul>
       </div>
 
       <h1>Descripción</h1>
       <div class="contenedor-descripcion-oferta">
-      <p>Buscamos JEFE DE COCINA para la localidad de Úbeda provincia de Jaén, con al menos 2 años de experiencia en puesto similar. Imprescindible capacidad de organización, resolución y liderazgo.</p>
-
-      • Elaboración de la oferta gastronómica<br>
-      • Dirigir, supervisar y planificar el conjunto de actividades de la cocina.<br>
-      • Asegurar el cumplimiento de los objetivos marcados.<br>
-      • Gestión de costes e inventarios <br>
-      • Tener informada la Dirección de las incidencias y novedades. <br>
-      • Coordinar el trabajo de todo el equipo de cocina diariamente <br>
-      • Promover la comunicación interna. <br>
-      • Coordinar los procesos de control de inventarios, pedidos y fichas técnicas. <br>
-      • Supervisar las existencias de los productos disponibles en la cocina. <br>
-      • Realizar controles periódicos del almacenamiento, manipulación y rendimiento de los productos de la de (APPCC). <br>
-      • Almacenar y manipular correctamente todo el material de la cocina. <br>
-      • Supervisar el cumplimiento de la normativa interna de la empresa.<br>
-      • Garantizar el nivel de calidad marcado.<br>
-      • Asegurar, dentro de su gestión, la satisfacción del cliente. <br>
-      • Coordinar y supervisar la limpieza de la cocina y toda su maquinaria.
-    </div>  
+      <p>{{ofertaActual.descripcion}}</p>
+      </div>  
     </ion-col>
     </ion-row>
     <ion-row class="comentarios">
