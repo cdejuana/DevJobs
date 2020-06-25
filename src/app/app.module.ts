@@ -22,9 +22,6 @@ import {InfiniteScrollModule} from 'ngx-infinite-scroll';
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
-  exports: [
-    InfiniteScrollModule
-    ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

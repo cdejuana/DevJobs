@@ -9,8 +9,7 @@
   </ion-toolbar>
 </ion-header>
 
-
-<ion-content [scrollEvents]="true">
+<ion-content>
   <ion-grid>
     <ion-row>
       <ion-title class="ion-text-center">
@@ -63,7 +62,7 @@
       loadingText="Loading more data...">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
-  <ion-fab *ngIf="scrollAbajo" vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab [hidden]="botonOculto" vertical="bottom" horizontal="end" slot="fixed">
     <ion-fab-button (click)="scrollToTop()">
       <ion-icon name="arrow-up-outline"></ion-icon>
     </ion-fab-button>

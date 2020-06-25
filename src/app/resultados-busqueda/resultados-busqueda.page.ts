@@ -17,12 +17,12 @@ export class ResultadosBusquedaPage implements OnInit {
   private ofertasSiguientes: Array<Oferta>;
   private contadorMostradas: number;
   private maximoMostradas: number;
-  public scrollAbajo: Boolean;
+  public botonOculto: Boolean;
 
   constructor(public ofertas: OfertasService, public infiniteScroll: InfiniteScrollModule) { }
 
   ngOnInit() { 
-    this.scrollAbajo = false;
+    this.botonOculto = true;
     this.listaOfertas = this.ofertas.listadoOfertas;
     this.maximoMostradas = this.listaOfertas.length;
 
@@ -56,16 +56,12 @@ export class ResultadosBusquedaPage implements OnInit {
     } else {
       eventoScroll.target.disabled = true;
     }
-    this.scrollAbajo = true;
-  }
-
-  public onScroll() {
-    this.scrollAbajo = true;
+    this.botonOculto = false;
   }
 
   public scrollToTop() {
     this.content.scrollToTop(1500);
-    this.scrollAbajo = false;
+    this.botonOculto = true;
   }
 
 }
