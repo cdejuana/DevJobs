@@ -18,6 +18,7 @@ export class ResultadosBusquedaPage implements OnInit {
   private contadorMostradas: number;
   private maximoMostradas: number;
   public botonOculto: Boolean;
+  private nOfertasPagina = 15;
 
   constructor(public ofertas: OfertasService, public infiniteScroll: InfiniteScrollModule) { }
 

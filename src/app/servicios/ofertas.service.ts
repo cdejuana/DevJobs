@@ -13,10 +13,6 @@ export class OfertasService {
 
   constructor(private http: HttpClient) { }
 
-  // public getOfertas(): Observable<any> {
-  //   return this.http.get("https://reqres.in/api/users?page=2");
-  // }
-
   public verOfertas(busqueda: Busqueda): Observable<Oferta[]>{
     return this.http.get<Oferta[]>(`http://localhost:80/api/read_ofertas.php?terminos=` + busqueda.terminos + `&localizacion=` + busqueda.localizacion);
   }
