@@ -1,8 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { OfertasService} from '../servicios/ofertas.service';
 import { Oferta } from './../oferta';
-import {InfiniteScrollModule} from 'ngx-infinite-scroll';
-import { IonList, IonContent } from '@ionic/angular';
+import { IonContent } from '@ionic/angular';
 
 @Component({
   selector: 'app-resultados-busqueda',
@@ -20,7 +19,7 @@ export class ResultadosBusquedaPage implements OnInit {
   public botonOculto: Boolean;
   private nOfertasPagina = 15;
 
-  constructor(public ofertas: OfertasService, public infiniteScroll: InfiniteScrollModule) { }
+  constructor(public ofertas: OfertasService) { }
 
   ngOnInit() { 
     this.botonOculto = true;

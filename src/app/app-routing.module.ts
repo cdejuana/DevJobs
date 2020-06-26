@@ -46,7 +46,16 @@ const routes: Routes = [
   },
   {
     path: 'resultados-busqueda',
-    loadChildren: () => import('./resultados-busqueda/resultados-busqueda.module').then( m => m.ResultadosBusquedaPageModule)
+    children: [
+      {
+        path: "",
+        loadChildren: () => import('./resultados-busqueda/resultados-busqueda.module').then( m => m.ResultadosBusquedaPageModule)
+      },
+      {
+        path: ":detalleOferta",
+        loadChildren: () => import('./oferta-detalles/oferta-detalles.module').then( m => m.OfertaDetallesPageModule)
+      }
+    ]
   },
   {
     path: 'oferta-detalles-busqueda',

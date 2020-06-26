@@ -22,4 +22,8 @@ export class OfertasService {
       this.listadoOfertas.push(oferta);
     }
   }
+
+  public borraOfertas() {
+    this.listadoOfertas.length = 0;
+  }
 }
