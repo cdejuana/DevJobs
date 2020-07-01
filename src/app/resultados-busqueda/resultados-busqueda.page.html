@@ -9,7 +9,7 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content scrollEvents="true" (ionScrollEnd)="scrollingEnd($event)">
   <ion-grid>
     <ion-row>
       <ion-title class="ion-text-center">
@@ -55,10 +55,10 @@
       </ion-grid>
     </ion-item>
   </ion-list>
-  <ion-infinite-scroll threshold="100px" (ionInfinite)="onScrollEnd($event)">
+  <ion-infinite-scroll threshold="10%" (ionInfinite)="onScrollBottom($event)">
     <ion-infinite-scroll-content
       loadingSpinner="bubbles"
-      loadingText="Loading more data...">
+      loadingText="Cocinando más ofertas...">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
   <ion-fab [hidden]="botonOculto" vertical="bottom" horizontal="end" slot="fixed">
