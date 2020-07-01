@@ -26,7 +26,8 @@ export class BienvenidaInicioPage implements OnInit, OnDestroy {
     this.criterioDeBusqueda.terminos = this.terminosbusqueda;
     this.criterioDeBusqueda.localizacion = this.localizacion;
     this.suscripcionOfertas = this.ofertas.verOfertas(this.criterioDeBusqueda).subscribe( data => {      
-      this.ofertas.guardaListaOfertas(data);
+      console.log(data.data);
+      this.ofertas.guardaListaOfertas(data.data);
       this.router.navigateByUrl("/resultados-busqueda");
     },
     error => {

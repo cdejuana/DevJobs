@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
 import { Oferta } from '../oferta';
+import { OfertasPaginadas } from "../ofertas-paginadas";
 import { Busqueda } from './busqueda';
 
 @Injectable({
@@ -9,12 +10,12 @@ import { Busqueda } from './busqueda';
 })
 export class OfertasService {
   PHP_API_SERVER = "localhost:3306";
-  public listadoOfertas: Array<Oferta> = new Array<Oferta>();
+  public listadoOfertas: Array<any> = new Array<any>();
 
   constructor(private http: HttpClient) { }
 
-  public verOfertas(busqueda: Busqueda): Observable<Oferta[]>{
-    return this.http.get<Oferta[]>(`http://localhost:80/api/read_ofertas.php?terminos=` + busqueda.terminos + `&localizacion=` + busqueda.localizacion);
+  public verOfertas(busqueda: Busqueda): Observable<OfertasPaginadas>{  
+    return this.http.get<OfertasPaginadas>(`http://127.0.0.1:8000/api/verOfertas`);
   }
 
   public guardaListaOfertas(ofertas) {
