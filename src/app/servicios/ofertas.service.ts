@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from 'rxjs';
-import { Oferta } from '../oferta';
 import { OfertasPaginadas } from "../ofertas-paginadas";
 import { Busqueda } from './busqueda';
 
