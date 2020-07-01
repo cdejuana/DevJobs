@@ -9,21 +9,24 @@ import { Busqueda } from './busqueda';
 })
 export class OfertasService {
   PHP_API_SERVER = "localhost:3306";
-  public listadoOfertas: Array<any> = new Array<any>();
+  public ofertasPaginadas: OfertasPaginadas = null;
+  private auxOfertasPaginadas: OfertasPaginadas = null;
 
   constructor(private http: HttpClient) { }
 
-  public verOfertas(busqueda: Busqueda): Observable<OfertasPaginadas>{  
+  public verOfertas(busqueda: Busqueda): Observable<OfertasPaginadas>{
     return this.http.get<OfertasPaginadas>(`http://127.0.0.1:8000/api/verOfertas`);
   }
 
-  public guardaListaOfertas(ofertas) {
-    for (let oferta of ofertas) {
-      this.listadoOfertas.push(oferta);
-    }
+  public guardaOfertas(ofertas: OfertasPaginadas) {
+    this.ofertasPaginadas = ofertas;
+  }
+
+  public siguientePaginadeOfertas(): Observable<OfertasPaginadas>{  
+    return this.http.get<OfertasPaginadas>(this.ofertasPaginadas.next_page_url);
   }
 
   public borraOfertas() {
-    this.listadoOfertas.length = 0;
+    this.ofertasPaginadas = null;
   }
 }
