@@ -31,7 +31,6 @@ export class ResultadosBusquedaPage implements OnInit {
     } else {
       this.ofertasMostradas = this.listaOfertas;
     }
-
     this.contadorMostradas = this.ofertasMostradas.length;
   }
 
