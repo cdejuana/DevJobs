@@ -1,7 +1,8 @@
 <ion-header>
   <ion-toolbar >
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/tabs/tab2"></ion-back-button>
+      <!-- <ion-back-button [routerLink]="['/tabs/tab2']"></ion-back-button> -->
+      <ion-back-button [routerLink]="['/resultados-busqueda']"></ion-back-button>
     </ion-buttons>
     <ion-img class="logoGastroToolbar" src="../assets/img/logo-navbar-candidatos-black.png" alt="logo gastroempleo.com"></ion-img>
   </ion-toolbar>
@@ -14,7 +15,7 @@
     </div>
     <div class="n-ofertas">
       <ion-title class="ion-text-center">   
-        <h4 class="bree">Mis ofertas: {{ indiceOferta + 1 }} de {{ listaOfertas.length }}</h4>
+        <h4 class="bree">Mis ofertas: {{ indiceOferta + 1 }} de {{ totalOfertas }}</h4>
       </ion-title>
     </div>
     <div class="icono-siguiente">

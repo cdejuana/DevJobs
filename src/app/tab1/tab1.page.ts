@@ -26,7 +26,7 @@ export class Tab1Page implements  OnInit, OnDestroy  {
     this.criterioDeBusqueda.terminos = this.terminosbusqueda;
     this.criterioDeBusqueda.localizacion = this.localizacion;
     this.suscripcionOfertas = this.ofertas.verOfertas(this.criterioDeBusqueda).subscribe( data => {      
-      this.ofertas.guardaOfertas(data);
+      this.ofertas.guardaOfertasPaginadas(data);
       this.router.navigateByUrl("/resultados-busqueda");
     },
     error => {

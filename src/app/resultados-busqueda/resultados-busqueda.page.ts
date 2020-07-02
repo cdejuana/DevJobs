@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { OfertasService} from '../servicios/ofertas.service';
 import { Oferta } from './../oferta';
 import { IonContent } from '@ionic/angular';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-resultados-busqueda',
@@ -77,14 +76,20 @@ export class ResultadosBusquedaPage implements OnInit {
     this.suscripcionOfertas = this.ofertas.siguientePaginadeOfertas().subscribe( data => {
       // NOS DEVUELVE EL OBJETO DE OFEERTAS PAGINADAS Y LO ACTUALIZAMOS
       this.ofertas.ofertasPaginadas = data;
+      
       // GUARDAMOS EL ARRAY DE OFERTAS QUE CONTIENE:
       this.ofertasSiguientes = data.data;
-      // Y LAS AÑADIMOS A OFERTAS MOSTRADAS, PARA QUE LAS MUESTRE EN LA VISTA
+
+      // LAS AÑADIMOS A OFERTAS MOSTRADAS, PARA QUE LAS MUESTRE EN LA VISTA
       for (let index = 0; index < this.ofertasSiguientes.length; index++) {
         this.ofertasMostradas.push(this.ofertasSiguientes[index]);
       }
+      // y actualizamos la lista de ofertas cargadas/mostradas en el servicio
+      this.ofertas.ofertasCargadas = this.ofertasMostradas;
+      
       // ACTUALIZAMOS EL NUMERO DE PAGINA ACTUAL
       this.paginaActual = this.ofertas.ofertasPaginadas.current_page;
+
       // TERMINAMOS EL EVENTO SCROLL
       eventoScroll.target.complete();
     },
