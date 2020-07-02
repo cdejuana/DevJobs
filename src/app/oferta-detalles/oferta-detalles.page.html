@@ -11,20 +11,26 @@
 <ion-content>
   <div class="navegador-ofertas">
     <div class="icono-anterior">
-      <ion-icon *ngIf="listaOfertas.indexOf(ofertaActual) > 0" id="anterior" [routerLink]="['/resultados-busqueda', (listaOfertas.indexOf(ofertaActual) - 1)]" name="chevron-back-circle-outline"></ion-icon>
+      <ion-icon *ngIf="listaOfertas.indexOf(ofertaActual) > 0" id="anterior"
+                [routerLink]="['/resultados-busqueda', (listaOfertas.indexOf(ofertaActual) - 1)]"
+                name="chevron-back-circle-outline">
+      </ion-icon>
     </div>
     <div class="n-ofertas">
-      <ion-title class="ion-text-center">   
-        <h4 class="bree">Mis ofertas: {{ indiceOferta + 1 }} de {{ totalOfertas }}</h4>
+      <ion-title class="ion-text-center">
+        <h4 class="bree">Oferta {{ indiceOferta }} de {{ totalOfertas }}</h4>
       </ion-title>
     </div>
     <div class="icono-siguiente">
-      <ion-icon *ngIf="listaOfertas.indexOf(ofertaActual) < listaOfertas.length -1" id="siguiente" [routerLink]="['/resultados-busqueda', (listaOfertas.indexOf(ofertaActual) + 1)]" name="chevron-forward-circle-outline"></ion-icon>
+      <ion-icon name="chevron-forward-circle-outline" id="siguiente"
+                *ngIf="listaOfertas.indexOf(ofertaActual) < totalOfertas"
+                (click)="siguienteOferta()" [routerLink]="['/resultados-busqueda', (listaOfertas.indexOf(ofertaActual) + 1)]">
+      </ion-icon>      
     </div>
   </div>
   <ion-grid>
     <ion-row>
-      <ion-title class="titulo-detalle-oferta">{{ofertaActual.titulo}}</ion-title>      
+      <h1 class="titulo-detalle-oferta">{{ofertaActual.titulo}}</h1>      
     </ion-row>
     <ion-row class="cabecera">
       <ion-col>

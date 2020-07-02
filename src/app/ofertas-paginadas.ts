@@ -3,6 +3,7 @@ import { Oferta } from './oferta';
 export interface OfertasPaginadas {
     current_page: number;
     data: Array<Oferta>;
+    first_page_url: string;
     from: number;
     last_page: number;
     last_page_url: string;

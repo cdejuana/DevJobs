@@ -28,6 +28,10 @@ export class OfertasService {
     return this.http.get<OfertasPaginadas>(this.ofertasPaginadas.next_page_url);
   }
 
+  public recargaPaginadeOfertas(): Observable<OfertasPaginadas>{  
+    return this.http.get<OfertasPaginadas>(this.ofertasPaginadas.first_page_url);
+  }
+
   public guardarOfertasCargadas(ofertasSiguientes: Oferta[]) {
     this.ofertasCargadas = ofertasSiguientes;
   }
