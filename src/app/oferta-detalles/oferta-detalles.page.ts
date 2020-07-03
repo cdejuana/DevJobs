@@ -4,6 +4,7 @@ import { Oferta } from '../oferta';
 import { OfertasService} from '../servicios/ofertas.service';
 import { Router } from "@angular/router";
 import { IonContent } from '@ionic/angular';
+import { Gesture, GestureController } from '@ionic/angular';
 
 @Component({
   selector: 'app-oferta-detalles',
@@ -11,8 +12,6 @@ import { IonContent } from '@ionic/angular';
   styleUrls: ['./oferta-detalles.page.scss'],
 })
 export class OfertaDetallesPage implements OnInit {
-  // CON EL DECORADOR @VIEWCHILD ACCEDEMOS A LOS MÉTODOS DE LOS COMPONENTES
-  // EN ESTE CASO ION COMPONENT, PARA SABER CUANDO SE HACE SCROLL, ETC...
   @ViewChild(IonContent, { static: false }) content: IonContent;
 
   public listaOfertas: Array<Oferta>;
@@ -21,7 +20,15 @@ export class OfertaDetallesPage implements OnInit {
   public totalOfertas: number;
   private ofertasSiguientes: Oferta[];
 
-  constructor(private ruta: ActivatedRoute, private ofertas: OfertasService, private router: Router) { }
+  constructor(private ruta: ActivatedRoute, private ofertas: OfertasService, private router: Router, private gestureCtrl: GestureController) {
+    const gesture: Gesture = this.gestureCtrl.create({
+      el: this.element.nativeElement,
+      threshold: 15,
+      gestureName: 'swipe',
+      onMove: ev => this.onSwipeHandler(ev)
+    }, true);
+    // The `true` above ensures that callbacks run inside NgZone.
+  }
 
   ngOnInit() {
     this.totalOfertas = this.ofertas.ofertasPaginadas.total;
@@ -45,7 +52,6 @@ export class OfertaDetallesPage implements OnInit {
   }
     
   public aniadirOfertas() {
-    // SE LLAMA A LA SIGUIENTE PAGINA DE OFERTAS QUE NOS PASA LA API SUSCRIBIENDONOS A UN OBSERVABLE
     this.ofertas.siguientePaginadeOfertas().subscribe( data => {
       // NOS DEVUELVE EL OBJETO DE OFEERTAS PAGINADAS Y LO ACTUALIZAMOS
       this.ofertas.ofertasPaginadas = data;
@@ -63,9 +69,12 @@ export class OfertaDetallesPage implements OnInit {
     });
   }
 
-  public scrollToTop() {    
-    // EL CONTENIDO HACE SCROLL HASTA EL INICIO (ARRIBA)
+  public scrollToTop() {
     this.content.scrollToTop();
-  }  
+  }
+
+  onSwipeHandler(evento) {
+    
+  }
 
 }
