@@ -4,7 +4,6 @@ import { Oferta } from '../oferta';
 import { OfertasService} from '../servicios/ofertas.service';
 import { Router } from "@angular/router";
 import { IonContent } from '@ionic/angular';
-import { Gesture, GestureController } from '@ionic/angular';
 
 @Component({
   selector: 'app-oferta-detalles',
@@ -20,15 +19,7 @@ export class OfertaDetallesPage implements OnInit {
   public totalOfertas: number;
   private ofertasSiguientes: Oferta[];
 
-  constructor(private ruta: ActivatedRoute, private ofertas: OfertasService, private router: Router, private gestureCtrl: GestureController) {
-    const gesture: Gesture = this.gestureCtrl.create({
-      el: this.element.nativeElement,
-      threshold: 15,
-      gestureName: 'swipe',
-      onMove: ev => this.onSwipeHandler(ev)
-    }, true);
-    // The `true` above ensures that callbacks run inside NgZone.
-  }
+  constructor(private ruta: ActivatedRoute, private ofertas: OfertasService, private router: Router) { }
 
   ngOnInit() {
     this.totalOfertas = this.ofertas.ofertasPaginadas.total;
@@ -71,10 +62,6 @@ export class OfertaDetallesPage implements OnInit {
 
   public scrollToTop() {
     this.content.scrollToTop();
-  }
-
-  onSwipeHandler(evento) {
-    
-  }
+  }  
 
 }
