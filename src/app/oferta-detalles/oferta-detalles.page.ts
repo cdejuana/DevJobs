@@ -17,15 +17,15 @@ export class OfertaDetallesPage implements OnInit {
   public ofertaActual: Oferta;
   public indiceOferta: number;
   public totalOfertas: number;
+  public totalMostradas: number;
   private ofertasSiguientes: Oferta[];
 
   constructor(private ruta: ActivatedRoute, private ofertas: OfertasService, private router: Router) { }
 
   ngOnInit() {    
     this.listaOfertas = this.ofertas.ofertasCargadas;
-    this.totalOfertas = this.listaOfertas.length;
-    console.log("indice actual: " + this.listaOfertas.indexOf(this.ofertaActual));
-    console.log("total ofertas: " + this.totalOfertas);
+    this.totalMostradas = this.listaOfertas.length; 
+    this.totalOfertas = this.ofertas.ofertasPaginadas.total;    
     this.ruta.paramMap.subscribe(paramMap => {
       const indiceOferta = paramMap.get('detalleOferta');
       this.ofertaActual = this.listaOfertas[indiceOferta];
@@ -33,7 +33,10 @@ export class OfertaDetallesPage implements OnInit {
       if (this.indiceOferta == this.listaOfertas.length) {
         this.ofertas.siguientePaginadeOfertas();
       }
-    });    
+    });
+    
+    console.log("ofertas cargadas: " + this.totalMostradas);
+    console.log("oferta actual: " + this.indiceOferta);
   }
 
   ngAfterViewChecked(){
@@ -41,10 +44,14 @@ export class OfertaDetallesPage implements OnInit {
   }
   
   public siguienteOferta() {
-    this.aniadirOfertas();
+    if (this.indiceOferta == (this.totalMostradas -1)) {
+      this.aniadirOfertas();
+    }    
   }
     
   public aniadirOfertas() {
+    console.log("cargando ofertas...");    
+    console.log("ofertas cargadas: " + this.totalMostradas);
     this.ofertas.siguientePaginadeOfertas().subscribe( data => {
       // NOS DEVUELVE EL OBJETO DE OFEERTAS PAGINADAS Y LO ACTUALIZAMOS
       this.ofertas.ofertasPaginadas = data;
