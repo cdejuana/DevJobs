@@ -19,7 +19,7 @@
   </ion-grid>
 
   <ion-list>
-    <ion-item *ngFor="let oferta of ofertasMostradas" (click)="visitaDetalle()" [routerLink]="['/resultados-busqueda', (ofertasMostradas.indexOf(oferta) + 1)]">    
+    <ion-item *ngFor="let oferta of ofertasMostradas" (click)="visitaDetalle()" [routerLink]="['/resultados-busqueda', (ofertasMostradas.indexOf(oferta))]">    
       <ion-grid>
         <ion-row>
           <ion-col size="12" class="titulo-oferta">
@@ -30,12 +30,11 @@
         <!-- DATOS oferta -->
         <ion-row>
           <ion-col>
-            <ion-badge class="datos-resumen-oferta sector-oferta" color="secondary">{{oferta.id_sector}}</ion-badge>
-           
-            <div *ngIf="oferta.id_empresa" class="datos-resumen-oferta"><span class="id-empresa">{{oferta.id_empresa}}</span></div>
-            <div *ngIf="oferta.id_localidad" class="datos-resumen-oferta">
+            <ion-badge *ngIf="oferta.sector"  class="datos-resumen-oferta sector-oferta" color="secondary">{{oferta.sector}}</ion-badge>           
+            <div *ngIf="oferta.empresa" class="datos-resumen-oferta"><span class="id-empresa">{{oferta.empresa}}</span></div>
+            <div *ngIf="oferta.localidad" class="datos-resumen-oferta">
               <ion-icon name="location"></ion-icon>
-              {{oferta.id_localidad}}
+              {{oferta.localidad}}
             </div>
             <div *ngIf="oferta.fecha_alta" class="datos-resumen-oferta">
               <ion-icon name="time"></ion-icon>
@@ -45,9 +44,9 @@
               <ion-icon name="logo-euro"></ion-icon>
               {{oferta.salario}}
             </div>
-            <div *ngIf="oferta.id_jornada" class="datos-resumen-oferta">
+            <div *ngIf="oferta.jornada" class="datos-resumen-oferta">
               <ion-icon name="calendar"></ion-icon>
-              Jornada {{oferta.id_jornada}}
+              Jornada {{oferta.jornada}}
             </div>
           </ion-col>
         </ion-row>  

@@ -1,11 +1,11 @@
 export interface Oferta {
     Id: number;
-    cod_pais: string;
-    id_empresa: number;
-    id_localidad: number;
-    id_sector: number;
-    id_contrato: number;
-    id_jornada: number;
+    // cod_pais: string;
+    empresa: string;
+    localidad: string;
+    sector: string;
+    contrato: string;
+    jornada: string;
     titulo: string;
     descripcion: string;   
     que_ofrece: string;
@@ -13,7 +13,7 @@ export interface Oferta {
     fecha_alta: Date;
     fecha_limite_inscripcion: Date;
     visitas_contacto: number;
-    id_estado: number;
-    migrado_afl: number;
-    id_importacion: number;
+    estado: string;
+    // migrado_afl: number;
+    // id_importacion: number;
 }

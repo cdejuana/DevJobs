@@ -21,9 +21,11 @@ export class OfertaDetallesPage implements OnInit {
 
   constructor(private ruta: ActivatedRoute, private ofertas: OfertasService, private router: Router) { }
 
-  ngOnInit() {
-    this.totalOfertas = this.ofertas.ofertasPaginadas.total;
+  ngOnInit() {    
     this.listaOfertas = this.ofertas.ofertasCargadas;
+    this.totalOfertas = this.listaOfertas.length;
+    console.log("indice actual: " + this.listaOfertas.indexOf(this.ofertaActual));
+    console.log("total ofertas: " + this.totalOfertas);
     this.ruta.paramMap.subscribe(paramMap => {
       const indiceOferta = paramMap.get('detalleOferta');
       this.ofertaActual = this.listaOfertas[indiceOferta];

@@ -18,7 +18,7 @@
     </div>
     <div class="n-ofertas">
       <ion-title class="ion-text-center">
-        <h4 class="bree">Oferta {{ indiceOferta }} de {{ totalOfertas }}</h4>
+        <h4 class="bree">Oferta {{ indiceOferta + 1 }} de {{ totalOfertas }}</h4>
       </ion-title>
     </div>
     <div class="icono-siguiente">
@@ -34,43 +34,48 @@
     </ion-row>
     <ion-row class="cabecera">
       <ion-col>
-        <ion-badge class="sector-oferta datos-resumen-oferta" color="secondary">{{ofertaActual.id_sector}}</ion-badge>
+        <ion-badge class="sector-oferta datos-resumen-oferta" color="secondary">{{ofertaActual.sector}}</ion-badge>
         <!-- sólo debe mostrar el estado de la candidatura cuando está logeado -->
-        <ion-badge class="datos-resumen-oferta sector-oferta" color="primary">En proceso (revisar si logeado o no)</ion-badge>
+        <ion-badge class="datos-resumen-oferta sector-oferta" color="primary">En proceso(!!!)</ion-badge>
         <!-- <ion-badge *ngIf="!oferta.leido" class="datos-resumen-oferta sector-oferta" color="dark">No leído</ion-badge> -->
-        <div class="datos-resumen-oferta id-empresa">{{ofertaActual.id_empresa}}</div>
-        <div class="datos-resumen-oferta"><ion-icon name="location"></ion-icon>{{ofertaActual.id_localidad}}</div>
-        <!-- fecha de alta: en la web pone: hace 11 horas / minutos / dias REVISAR -->
-        <div class="datos-resumen-oferta"><ion-icon name="time"></ion-icon>{{ofertaActual.fecha_alta}} formato correcto???</div>
+        <div class="datos-resumen-oferta id-empresa">{{ofertaActual.empresa}}</div>
+        <div class="datos-resumen-oferta"><ion-icon name="location"></ion-icon>{{ofertaActual.localidad}}</div>
+        <!-- fecha de alta: en la web pone: hace 11 horas / minutos / dias REVISAR?? -->
+        <div class="datos-resumen-oferta"><ion-icon name="time"></ion-icon>{{ofertaActual.fecha_alta}}</div>
       </ion-col>
     </ion-row>
     <ion-row class="resumen">
-      <ion-col>
-      <h1>Resumen</h1>
+      <ion-col>      
       <div class="contenedor-resumen-oferta">
+        <h1>Resumen</h1>
         <ul>
         <li><ion-text class="item-dato-oferta">Referencia: </ion-text>{{ofertaActual.Id}}</li>
-        <li><ion-text class="item-dato-oferta">Sector: </ion-text>{{ofertaActual.id_sector}}</li>
-        <li><ion-text class="item-dato-oferta">Tipo de contrato: </ion-text>{{ofertaActual.id_contrato}}</li>
-        <li><ion-text class="item-dato-oferta">Tipo de jornada: </ion-text>{{ofertaActual.id_jornada}}</li>
-        <li><ion-text class="item-dato-oferta">Salario: </ion-text>{{ofertaActual.salario}}</li>
+        <li *ngIf="ofertaActual.sector"><ion-text class="item-dato-oferta">Sector: </ion-text>{{ofertaActual.sector}}</li>
+        <li *ngIf="ofertaActual.contrato"><ion-text class="item-dato-oferta">Tipo de contrato: </ion-text>{{ofertaActual.contrato}}</li>
+        <li *ngIf="ofertaActual.jornada"><ion-text class="item-dato-oferta">Tipo de jornada: </ion-text>{{ofertaActual.jornada}}</li>
+        <li *ngIf="ofertaActual.salario"><ion-text class="item-dato-oferta">Salario: </ion-text>{{ofertaActual.salario}}</li>
         <li><ion-text class="item-dato-oferta">Fecha alta: </ion-text>{{ofertaActual.fecha_alta}}</li>
         <li><ion-text class="item-dato-oferta">Fecha limite de inscripción: </ion-text>{{ofertaActual.fecha_limite_inscripcion}}</li>
         </ul>
       </div>
-
-      <h1>Descripción</h1>
-      <div class="contenedor-descripcion-oferta">
-      <p>{{ofertaActual.descripcion}}</p>
-      </div>  
+      
+      <div *ngIf="ofertaActual.descripcion" class="contenedor-descripcion-oferta">
+        <h1>Descripción</h1>
+        <p>{{ofertaActual.descripcion}}</p>
+      </div>
+      
+      <div *ngIf="ofertaActual.que_ofrece" class="contenedor-descripcion-oferta">
+        <h1>Qué ofrece</h1>
+        <p>{{ofertaActual.que_ofrece}}</p>
+      </div>
     </ion-col>
     </ion-row>
-    <ion-row class="comentarios">
+    <!-- <ion-row class="comentarios">
       <ion-col>
       <h1>Comentarios</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt quam officiis quo quae, nobis nostrum corporis debitis. Necessitatibus suscipit nam porro hic aperiam sequi odio vitae tenetur deserunt. Animi, reprehenderit!</p>
       </ion-col>
-      </ion-row>
+    </ion-row> -->
   </ion-grid>
 
 </ion-content>
