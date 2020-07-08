@@ -7,63 +7,13 @@
 <ion-content [fullscreen]="true" class="fondo-gris">
   <ion-grid class="row-container">
     <ion-row>
-      <ion-title class="ion-text-center">
-        <h3 class="bree">Mis datos</h3>
-      </ion-title>
-    </ion-row>
-    <ion-row class="row-bottom">
       <ion-col>
-        <form>
-          <ion-label class="label-datos">Nombre</ion-label>
-          <ion-input type="text" placeholder="Nombre" class="ion-margin"></ion-input>
-
-          <ion-label class="label-datos">Apellidos</ion-label>
-          <ion-input type="text" placeholder="Email" class="ion-margin"></ion-input>
-
-          <ion-label class="label-datos">Foto de perfil</ion-label>
-          <ion-img class="foto-perfil ion-text-center" src="../assets/img/icono-gastro-empleo.jpg"></ion-img>
-          <!-- <ion-input type="file" class="ion-margin"></ion-input> -->
-          <ion-select placeholder="Subir foto">
-            <ion-select-option value="camara">Desde la cámara</ion-select-option>
-            <ion-select-option value="galeria">Desde la galería</ion-select-option>
-          </ion-select>
-        
-
-          <ion-label class="label-datos">Fecha de nacimiento</ion-label>
-          <ion-input type="date" class="ion-margin"></ion-input>
-
-          <ion-label class="label-datos">Email</ion-label>
-          <ion-input type="text" placeholder="Email" class="ion-margin"></ion-input>
-
-          <ion-label class="label-datos">Teléfono</ion-label>
-          <ion-input type="text" placeholder="Teléfono" class="ion-margin"></ion-input>
-
-          <ion-label class="label-datos">Localidad</ion-label>
-          <ion-input type="text" placeholder="Madrid" class="ion-margin">
-            <ion-icon name="location-outline" class="input-icon"></ion-icon>
-          </ion-input>
-
-          <ion-label class="label-datos">Carta de presentación</ion-label>
-          <ion-textarea placeholder="Opcional"></ion-textarea>
-
-          <ion-label class="label-datos">Currículums o portafolios (PDF)</ion-label>    
-          <ion-input type="file" placeholder="Email" class="ion-margin"></ion-input>
-
-          <ion-label class="label-datos">Modificar contraseña</ion-label>
-          <p class="texto-pequenio lato-light">(Rellenar sólo en caso de querer modificarla)</p>
-          <ion-input type="text" placeholder="Nueva contraseña" class="contrasenia"></ion-input>
-          <ion-input type="text" placeholder="Repetir nueva contraseña" class="contrasenia"></ion-input>
-          <ion-button type="button" class="bree ion-text-uppercase boton-ancho ion-margin">Guardar cambios</ion-button>                  
-        </form>
-
-        <!-- <ion-button type="button" class="bree ion-text-uppercase boton-ancho ion-margin" (click)="cerrarSesion()"  color="dark">Cerrar sesión</ion-button> -->
-        <ion-button type="button" class="bree ion-text-uppercase boton-ancho ion-margin" [routerLink]="['/']"  color="dark">Cerrar sesión</ion-button>        
-        <p class="ion-text-center lato-light">Si desea eliminar su perfil, pulse:
-        <a id="enlace-eliminar-perfil" class="ion-text-center ion-text-uppercase bree enlace-resaltado-gris">Eliminar perfil</a></p>  
         <p class="ion-text-center">
-          <ion-text class="lato-light">¿Necesitas más información o quieres ponerte en contacto con nosotros?</ion-text><br>
-          <a href="https://www.gastroempleo.com/preguntas-frecuentes/" class="ion-text-center bree ion-text-uppercase enlace-resaltado-gris">Consulta nuestros temas de ayuda</a>
+          <ion-text class="lato-light">Para ver o modificar tus datos</ion-text><br>
+          <a href="https://www.gastroempleo.com/acceso-candidatos/" class="ion-text-center bree ion-text-uppercase enlace-resaltado-gris">Visita nuestra web</a>
         </p>
+        <!-- <ion-button type="button" class="bree ion-text-uppercase boton-ancho ion-margin" (click)="cerrarSesion()"  color="dark">Cerrar sesión</ion-button> -->
+        <ion-button type="button" class="bree ion-text-uppercase boton-ancho ion-margin" [routerLink]="['/']"  color="dark">Cerrar sesión</ion-button>                
         <br><br><br>
       </ion-col>
     </ion-row>
