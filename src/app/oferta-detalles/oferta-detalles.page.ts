@@ -34,24 +34,25 @@ export class OfertaDetallesPage implements OnInit {
         this.ofertas.siguientePaginadeOfertas();
       }
     });
-    
-    console.log("ofertas cargadas: " + this.totalMostradas);
-    console.log("oferta actual: " + this.indiceOferta);
+    if (this.indiceOferta == (this.totalMostradas -2)) {
+      this.aniadirOfertas();
+    }
+    // console.log("ofertas cargadas: " + this.totalMostradas);
+    // console.log("oferta actual: " + this.indiceOferta);
   }
 
   ngAfterViewChecked(){
     this.scrollToTop();
   }
   
-  public siguienteOferta() {
-    if (this.indiceOferta == (this.totalMostradas -1)) {
-      this.aniadirOfertas();
-    }    
-  }
+  // public siguienteOferta() {
+  //   if (this.indiceOferta == (this.totalMostradas -2)) {
+  //     this.aniadirOfertas();
+  //   }    
+  // }
     
   public aniadirOfertas() {
-    console.log("cargando ofertas...");    
-    console.log("ofertas cargadas: " + this.totalMostradas);
+    console.log("cargando ofertas...");        
     this.ofertas.siguientePaginadeOfertas().subscribe( data => {
       // NOS DEVUELVE EL OBJETO DE OFEERTAS PAGINADAS Y LO ACTUALIZAMOS
       this.ofertas.ofertasPaginadas = data;
@@ -62,7 +63,9 @@ export class OfertaDetallesPage implements OnInit {
         this.listaOfertas.push(this.ofertasSiguientes[index]);
       }
       // y actualizamos la lista de ofertas cargadas/mostradas en el servicio
-      this.ofertas.ofertasCargadas = this.listaOfertas;    
+      this.ofertas.ofertasCargadas = this.listaOfertas;
+      this.totalMostradas = this.listaOfertas.length;
+      console.log("ofertas cargadas: " + this.totalMostradas);
     },
     error => {
       console.log(error);
