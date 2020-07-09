@@ -19,10 +19,12 @@ export class OfertaDetallesPage implements OnInit {
   public totalOfertas: number;
   public totalMostradas: number;
   private ofertasSiguientes: Oferta[];
+  public puedePulsarSiguiente: boolean;
+  public compruebaBotonSiguiente: boolean;
 
   constructor(private ruta: ActivatedRoute, private ofertas: OfertasService, private router: Router) { }
 
-  ngOnInit() {    
+  ngOnInit() {       
     this.listaOfertas = this.ofertas.ofertasCargadas;
     this.totalMostradas = this.listaOfertas.length; 
     this.totalOfertas = this.ofertas.ofertasPaginadas.total;    
@@ -39,6 +41,14 @@ export class OfertaDetallesPage implements OnInit {
     }
     // console.log("ofertas cargadas: " + this.totalMostradas);
     // console.log("oferta actual: " + this.indiceOferta);
+    console.log("indice: " + this.indiceOferta);
+    console.log("total mostradas: " + this.totalMostradas);
+    if ((this.indiceOferta < (this.totalMostradas -1))) {
+      this.puedePulsarSiguiente = true;
+    } else {
+      this.puedePulsarSiguiente = false;
+    }
+    this.compruebaBotonSiguiente = false;
   }
 
   ngAfterViewChecked(){
@@ -50,6 +60,17 @@ export class OfertaDetallesPage implements OnInit {
   //     this.aniadirOfertas();
   //   }    
   // }
+
+  public siguienteOferta() {
+    if (this.puedePulsarSiguiente) {
+      this.router.navigate(['/resultados-busqueda/' + (this.listaOfertas.indexOf(this.ofertaActual) + 1)]);
+      this.compruebaBotonSiguiente = true;
+    }
+    // else if (this.puedePulsarSiguiente && !this.compruebaBotonSiguiente) {
+    //   this.router.navigate(['/resultados-busqueda/' + (this.listaOfertas.indexOf(this.ofertaActual) + 1)]);
+    // }
+    console.log("pulsado");
+  }
     
   public aniadirOfertas() {
     console.log("cargando ofertas...");        
@@ -63,9 +84,11 @@ export class OfertaDetallesPage implements OnInit {
         this.listaOfertas.push(this.ofertasSiguientes[index]);
       }
       // y actualizamos la lista de ofertas cargadas/mostradas en el servicio
+      this.puedePulsarSiguiente = true;
       this.ofertas.ofertasCargadas = this.listaOfertas;
       this.totalMostradas = this.listaOfertas.length;
-      console.log("ofertas cargadas: " + this.totalMostradas);
+      console.log("ofertas cargadas: " + this.totalMostradas);   
+      console.log("puede pulsar siguiente: " + this.puedePulsarSiguiente);
     },
     error => {
       console.log(error);
@@ -73,7 +96,7 @@ export class OfertaDetallesPage implements OnInit {
   }
 
   public scrollToTop() {
-    this.content.scrollToTop();
+    this.content.scrollToTop();    
   }  
 
 }

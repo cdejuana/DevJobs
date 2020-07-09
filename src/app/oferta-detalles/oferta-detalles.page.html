@@ -24,7 +24,7 @@
     <div class="icono-siguiente">
       <ion-icon name="chevron-forward-circle-outline" id="siguiente"
                 *ngIf="listaOfertas.indexOf(ofertaActual) < (totalOfertas -1)"
-                [routerLink]="['/resultados-busqueda', (listaOfertas.indexOf(ofertaActual) + 1)]">
+                (click)="siguienteOferta()">
       </ion-icon>      
     </div>
   </div>
