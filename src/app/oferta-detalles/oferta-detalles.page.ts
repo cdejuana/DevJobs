@@ -34,7 +34,7 @@ export class OfertaDetallesPage implements OnInit {
         this.ofertas.siguientePaginadeOfertas();
       }
     });
-    if (this.indiceOferta == (this.totalMostradas -2)) {
+    if ((this.indiceOferta == (this.totalMostradas -2)) && this.totalMostradas < this.totalOfertas) {
       this.aniadirOfertas();
     }
     // console.log("ofertas cargadas: " + this.totalMostradas);

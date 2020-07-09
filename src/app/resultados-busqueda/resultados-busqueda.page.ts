@@ -63,7 +63,7 @@ export class ResultadosBusquedaPage implements OnInit {
 // CADA VEZ QUE SE HACE SCROLL HASTA EL FINAL DE LA PÁGINA, SE EJECUTA ESTA FUNCIÓN
   public onScrollBottom(eventoScroll) {    
     // SIEMPRE QUE NO ESTEMOS EN LA ÚTIMA PÁGINA, LLAMAMOS A AÑADIR OFERTAS
-    if (this.paginaActual < this.totalPaginas) {
+    if (this.ofertasMostradas.length < this.ofertasTotales) {
       this.aniadirOfertas(eventoScroll);
     } else {
       // SI ESTAMOS EN LA ULTIMA, LE DECIMOS QUE DESACTIVE EL SCROLL
