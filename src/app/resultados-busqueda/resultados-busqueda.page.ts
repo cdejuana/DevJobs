@@ -123,6 +123,7 @@ export class ResultadosBusquedaPage implements OnInit {
       this.ofertasMostradas = this.ofertas.ofertasCargadas;
       this.paginaActual = this.ofertas.ofertasPaginadas.current_page;
       this.contenidoPaginaArriba = true;
+      this.botonOculto = true;
     },
     error => {
       console.log(error);
