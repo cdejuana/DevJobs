@@ -27,7 +27,7 @@ export class OfertaDetallesPage implements OnInit {
   ngOnInit() {       
     this.listaOfertas = this.ofertas.ofertasCargadas;
     this.totalMostradas = this.listaOfertas.length; 
-    this.totalOfertas = this.ofertas.ofertasPaginadas.total;    
+    this.totalOfertas = this.ofertas.ofertasCargadas.length;    
     this.ruta.paramMap.subscribe(paramMap => {
       const indiceOferta = paramMap.get('detalleOferta');
       this.ofertaActual = this.listaOfertas[indiceOferta];
@@ -36,15 +36,15 @@ export class OfertaDetallesPage implements OnInit {
         this.ofertas.siguientePaginadeOfertas();
       }
     });
-    if ((this.indiceOferta == (this.totalMostradas -5)) && this.totalMostradas < this.totalOfertas) {
-      this.aniadirOfertas();
-    }
-    if ((this.indiceOferta < (this.totalMostradas -1))) {
-      this.puedePulsarSiguiente = true;
-    } else {
-      this.puedePulsarSiguiente = false;
-    }
-    this.compruebaBotonSiguiente = false;
+    // if ((this.indiceOferta == (this.totalMostradas -5)) && this.totalMostradas < this.totalOfertas) {
+    //   this.aniadirOfertas();
+    // }
+    // if ((this.indiceOferta < (this.totalMostradas -1))) {
+    //   this.puedePulsarSiguiente = true;
+    // } else {
+    //   this.puedePulsarSiguiente = false;
+    // }
+    // this.compruebaBotonSiguiente = false;
   }
 
   ngAfterViewChecked(){
