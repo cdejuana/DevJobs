@@ -46,16 +46,18 @@ export class ResultadosBusquedaPage implements OnInit {
     this.botonOculto = true;
 
     // GUARDAMOS EN MOSTRADAS LAS PRIMERAS 15 OFERTAS QUE NOS PASA LA API
-    this.ofertasMostradas =  this.ofertas.ofertasPaginadas.data;
+    this.ofertasMostradas =  this.ofertas.ofertasCargadas;
 
     // GUARDAMOS EL Nº TOTAL DE PÁGINAS PARA SABER CUANDO PARAR DE CARGAR:
-    this.totalPaginas = this.ofertas.ofertasPaginadas.to;
+    // this.totalPaginas = this.ofertas.ofertasPaginadas.to;
+    this.totalPaginas = 1;
 
     // LA PAGINA ACTUAL
-    this.paginaActual = this.ofertas.ofertasPaginadas.current_page;
+    // this.paginaActual = this.ofertas.ofertasPaginadas.current_page;
+    this.paginaActual = 1;
 
     // EL Nº TOTAL DE OFERTAS
-    this.ofertasTotales = this.ofertas.ofertasPaginadas.total;
+    this.ofertasTotales = this.ofertas.ofertasCargadas.length;
 
     this.vuelveDeDetalle = false;
   }  
@@ -76,10 +78,10 @@ export class ResultadosBusquedaPage implements OnInit {
     // SE LLAMA A LA SIGUIENTE PAGINA DE OFERTAS QUE NOS PASA LA API SUSCRIBIENDONOS A UN OBSERVABLE
     this.suscripcionOfertas = this.ofertas.siguientePaginadeOfertas().subscribe( data => {
       // NOS DEVUELVE EL OBJETO DE OFEERTAS PAGINADAS Y LO ACTUALIZAMOS
-      this.ofertas.ofertasPaginadas = data;
+      // this.ofertas.ofertasPaginadas = data;
       
       // GUARDAMOS EL ARRAY DE OFERTAS QUE CONTIENE:
-      this.ofertasSiguientes = data.data;
+      // this.ofertasSiguientes = data.data;
 
       // LAS AÑADIMOS A OFERTAS MOSTRADAS, PARA QUE LAS MUESTRE EN LA VISTA
       for (let index = 0; index < this.ofertasSiguientes.length; index++) {

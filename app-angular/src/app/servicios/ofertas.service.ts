@@ -15,21 +15,23 @@ export class OfertasService {
 
   constructor(private http: HttpClient) { }
 
-  public verOfertas(busqueda: Busqueda): Observable<OfertasPaginadas>{
-    return this.http.get<OfertasPaginadas>(`http://127.0.0.1:3000/api/buscar/` + busqueda.terminos);
+  public verOfertas(busqueda: Busqueda): Observable<Oferta[]>{
+    // return this.http.get<OfertasPaginadas>(`http://127.0.0.1:3000/api/buscar/` + busqueda.terminos);
+    return this.http.get<Oferta[]>('http://127.0.0.1:3000/api/ofertas');
   }
 
-  public guardaOfertasPaginadas(ofertas: OfertasPaginadas) {
-    this.ofertasPaginadas = ofertas;
-    this.ofertasCargadas = this.ofertasPaginadas.data;
+  public guardaOfertasPaginadas(ofertas: Oferta[]) {
+    // this.ofertasPaginadas = ofertas;
+    // this.ofertasCargadas = this.ofertasPaginadas.data;
+    this.ofertasCargadas = ofertas;
   }
 
-  public siguientePaginadeOfertas(): Observable<OfertasPaginadas>{  
-    return this.http.get<OfertasPaginadas>(this.ofertasPaginadas.next_page_url);
+  public siguientePaginadeOfertas(): Observable<Oferta[]>{  
+    return this.http.get<Oferta[]>(this.ofertasPaginadas.next_page_url);
   }
 
-  public recargaPaginadeOfertas(): Observable<OfertasPaginadas>{  
-    return this.http.get<OfertasPaginadas>(this.ofertasPaginadas.first_page_url);
+  public recargaPaginadeOfertas(): Observable<Oferta[]>{  
+    return this.http.get<Oferta[]>(this.ofertasPaginadas.first_page_url);
   }
 
   public guardarOfertasCargadas(ofertasSiguientes: Oferta[]) {

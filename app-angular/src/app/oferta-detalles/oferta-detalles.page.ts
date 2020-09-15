@@ -61,9 +61,11 @@ export class OfertaDetallesPage implements OnInit {
   public aniadirOfertas() {    
     this.ofertas.siguientePaginadeOfertas().subscribe( data => {
       // NOS DEVUELVE EL OBJETO DE OFEERTAS PAGINADAS Y LO ACTUALIZAMOS
-      this.ofertas.ofertasPaginadas = data;
+      // this.ofertas.ofertasPaginadas = data;
+
       // GUARDAMOS EL ARRAY DE OFERTAS QUE CONTIENE:
-      this.ofertasSiguientes = data.data;
+      // this.ofertasSiguientes = data.data;
+      
       // LAS AÑADIMOS A LA LISTA DE OFERTAS QUE PODEMOS MOSTRAR
       for (let index = 0; index < this.ofertasSiguientes.length; index++) {
         this.listaOfertas.push(this.ofertasSiguientes[index]);
