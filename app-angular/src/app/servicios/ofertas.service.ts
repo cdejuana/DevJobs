@@ -16,8 +16,11 @@ export class OfertasService {
   constructor(private http: HttpClient) { }
 
   public verOfertas(busqueda: Busqueda): Observable<Oferta[]>{
-    // return this.http.get<OfertasPaginadas>(`http://127.0.0.1:3000/api/buscar/` + busqueda.terminos);
-    return this.http.get<Oferta[]>('http://127.0.0.1:3000/api/ofertas');
+    if (!busqueda.terminos) {
+      return this.http.get<Oferta[]>('http://127.0.0.1:3000/api/ofertas');
+    } else {
+      return this.http.get<Oferta[]>(`http://127.0.0.1:3000/api/busqueda/` + busqueda.terminos);
+    } 
   }
 
   public guardaOfertasPaginadas(ofertas: Oferta[]) {

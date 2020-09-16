@@ -37,13 +37,12 @@
     <ion-row>
       <ion-col>
         <ion-text *ngIf="formData.errorAcceso" color="danger" class="validador">Puede que estés introduciendo un email o contraseña erróneos, o que aún no estés registrado con nosotros.</ion-text>
-        <a class="ion-margin ion-text-center enlace-recuperacion-contrasenia" href="https://www.DevJobs/ayuda/candidato/recuperar-pass/">Recuperar contraseña</a>
+        <a class="ion-margin ion-text-center enlace-recuperacion-contrasenia" [routerLink]="['/recuperacion-contrasena']">Recuperar contraseña</a>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <!-- <a class="ion-text-center ion-text-uppercase bree enlace-resaltado-gris" [routerLink]="['/registro']">Registrarme</a> -->
-        <a class="ion-text-center ion-text-uppercase bree enlace-resaltado-gris" href="https://www.DevJobs/acceso-candidatos/">Registrarme</a>
+        <a class="ion-text-center ion-text-uppercase bree enlace-resaltado-gris" [routerLink]="['/registro']">Registrarme</a>
       </ion-col>
     </ion-row>
   </ion-grid>

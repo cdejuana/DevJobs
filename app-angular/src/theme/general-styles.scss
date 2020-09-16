@@ -1,7 +1,23 @@
 /** estilos generales **/
+
+.heading {
+  position: absolute;
+  top: 30px;
+  width: 50%;
+  margin-left: auto;
+}
+
+h3.sombra {
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+}
+
 .bree {
   font-family: 'Montserrat';
   font-weight: 700;
+  text-transform: lowercase;
+}
+.bree::first-letter {
+  text-transform: capitalize;
 }
 
 .lato-light {
@@ -23,6 +39,7 @@
 
 ion-img.logoGastroToolbar{
   width: 60%;
+  padding-top: 10px;
   margin: auto;
 }
 
@@ -40,7 +57,11 @@ ion-input, ion-textarea, ion-select {
   font-size: 1.1em;    
   border: 1px solid #f1f1f1 !important;
   background-color: rgba(255, 255, 255, 0.8) !important;
-  padding: 2%;
+}
+
+.native-input.sc-ion-input-ios {
+  padding-left: 2%;
+  padding-right: 2%;
 }
 
 .enlace-resaltado-gris {
@@ -211,7 +232,8 @@ ion-icon#siguiente {
 
 .checkbox-container ion-label {
   position: relative;
-  bottom: 14px;
+  bottom: 10px;
+  left: 10px;
 }
 
 ion-text.validador {
